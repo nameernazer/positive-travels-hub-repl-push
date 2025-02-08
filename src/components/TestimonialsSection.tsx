@@ -42,8 +42,8 @@ export default function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium">Testimonials</span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold">
+          <span className="text-primary font-medium uppercase tracking-wider">Testimonials</span>
+          <h2 className="mt-4 text-5xl md:text-6xl font-bold tracking-tight">
             What Our Clients Say
           </h2>
         </motion.div>

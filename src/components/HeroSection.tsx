@@ -5,8 +5,9 @@ import { ChevronRight } from 'lucide-react';
 
 const images = [
   "https://images.unsplash.com/photo-1469474968028-56623f02e42e",
-  "https://images.unsplash.com/photo-1501854140801-50d01698950b",
-  "https://images.unsplash.com/photo-1426604966848-d7adac402bff"
+  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05", // Snowy mountain
+  "https://images.unsplash.com/photo-1433086966358-54859d0ed716", // Nature scene
+  "https://images.unsplash.com/photo-1527576539890-dfa815648363", // Urban cityscape
 ];
 
 export default function HeroSection() {
@@ -36,7 +37,7 @@ export default function HeroSection() {
         />
       ))}
       
-      <div className="absolute inset-0 bg-black/30" />
+      <div className="absolute inset-0 bg-black/40" />
       
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="container-custom text-center">
@@ -44,23 +45,23 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            className="space-y-8"
           >
-            <h1 className="text-5xl md:text-7xl font-bold text-white max-w-4xl mx-auto leading-tight">
+            <h1 className="text-6xl md:text-8xl font-bold text-white max-w-5xl mx-auto leading-tight tracking-tight">
               Welcome to Positive Travel and Holidays
             </h1>
             
-            <p className="text-2xl md:text-4xl text-white/90 max-w-3xl mx-auto font-semibold">
+            <p className="text-3xl md:text-5xl text-white/90 max-w-3xl mx-auto font-light tracking-wide">
               Your Journey to Unforgettable Experiences Begins Here
             </p>
             
-            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto font-light">
               Discover the world with our expertly curated travel experiences
             </p>
             
-            <button className="mt-8 px-8 py-4 bg-primary text-white rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-primary/90 transition-colors">
+            <button className="mt-8 px-8 py-4 bg-primary text-white rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-primary/90 transition-colors text-lg">
               Start Your Journey
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-6 h-6" />
             </button>
           </motion.div>
         </div>

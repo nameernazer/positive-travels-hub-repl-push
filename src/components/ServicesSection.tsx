@@ -36,11 +36,11 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium">Our Services</span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold">
+          <span className="text-primary font-medium uppercase tracking-wider">Our Services</span>
+          <h2 className="mt-4 text-5xl md:text-6xl font-bold tracking-tight">
             Comprehensive Travel Solutions
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
             We offer a complete range of travel services to make your journey seamless and memorable.
           </p>
         </motion.div>
