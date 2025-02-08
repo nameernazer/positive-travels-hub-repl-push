@@ -46,13 +46,13 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
             className="space-y-6"
           >
-            <span className="inline-block px-4 py-1.5 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+            <h1 className="text-5xl md:text-7xl font-bold text-white max-w-4xl mx-auto leading-tight">
               Welcome to Positive Travel and Holidays
-            </span>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-white max-w-4xl mx-auto leading-tight">
-              Your Journey to Unforgettable Experiences Begins Here
             </h1>
+            
+            <p className="text-2xl md:text-4xl text-white/90 max-w-3xl mx-auto font-semibold">
+              Your Journey to Unforgettable Experiences Begins Here
+            </p>
             
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
               Discover the world with our expertly curated travel experiences

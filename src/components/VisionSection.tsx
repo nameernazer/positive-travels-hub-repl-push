@@ -32,7 +32,7 @@ export default function VisionSection() {
           className="text-center mb-16"
         >
           <span className="text-primary font-medium">Our Vision</span>
-          <h2 className="mt-4 text-3xl md:text-4xl font-bold">
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold">
             Creating Memories That Last a Lifetime
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
