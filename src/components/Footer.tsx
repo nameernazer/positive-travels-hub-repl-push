@@ -1,7 +1,7 @@
 
 import { MapPin, Phone, Mail, Instagram, MessageCircle } from 'lucide-react';
 
-const contactInfo = [
+const socialInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
@@ -10,31 +10,28 @@ const contactInfo = [
     href: "#"
   },
   {
-    icon: Phone,
-    title: "Call Us",
-    content: "+1 234 567 890",
-    action: "Call Now",
-    href: "tel:+1234567890"
-  },
-  {
-    icon: Mail,
-    title: "Email Us",
-    content: "hello@positivetravel.com",
-    action: "Send Email",
-    href: "mailto:hello@positivetravel.com"
-  },
-  {
     icon: Instagram,
     title: "Follow Us",
     content: "@positivetravel",
     action: "View Profile",
     href: "#"
+  }
+];
+
+const contactInfo = [
+  {
+    icon: Phone,
+    content: "+1 234 567 890",
+    href: "tel:+1234567890"
+  },
+  {
+    icon: Mail,
+    content: "hello@positivetravel.com",
+    href: "mailto:hello@positivetravel.com"
   },
   {
     icon: MessageCircle,
-    title: "WhatsApp",
     content: "+1 234 567 890",
-    action: "Message Us",
     href: "https://wa.me/1234567890"
   }
 ];
@@ -63,9 +60,9 @@ export default function Footer() {
           </div>
           
           <div>
-            <h3 className="text-2xl font-bold mb-4">Contact Info</h3>
+            <h3 className="text-2xl font-bold mb-4">Visit & Follow Us</h3>
             <div className="space-y-4">
-              {contactInfo.map((item) => (
+              {socialInfo.map((item) => (
                 <a
                   key={item.title}
                   href={item.href}

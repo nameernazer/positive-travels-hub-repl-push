@@ -1,15 +1,8 @@
 
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Instagram, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MessageCircle } from 'lucide-react';
 
 const contactInfo = [
-  {
-    icon: MapPin,
-    title: "Visit Us",
-    content: "123 Travel Street, City Center",
-    action: "Get Directions",
-    href: "#"
-  },
   {
     icon: Phone,
     title: "Call Us",
@@ -23,13 +16,6 @@ const contactInfo = [
     content: "hello@positivetravel.com",
     action: "Send Email",
     href: "mailto:hello@positivetravel.com"
-  },
-  {
-    icon: Instagram,
-    title: "Follow Us",
-    content: "@positivetravel",
-    action: "View Profile",
-    href: "#"
   },
   {
     icon: MessageCircle,
