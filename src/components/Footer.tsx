@@ -5,34 +5,34 @@ const socialInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    content: "123 Travel Street, City Center",
+    content: "Edakkulam, Thirunnavaya, Malappuram, Kerala, India",
     action: "Get Directions",
-    href: "#"
+    href: "https://www.google.com/maps/place/POSITIVE+TRAVEL+AND+HOLIDAYS/@10.877443,75.9829016,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba7b1196a6f0e15:0x8a8842a1bc3902c9!8m2!3d10.8774377!4d75.9854765!16s%2Fg%2F11lmqz43ly?entry=ttu"
   },
   {
     icon: Instagram,
     title: "Follow Us",
-    content: "@positivetravel",
+    content: "@positivetravelandholidays",
     action: "View Profile",
-    href: "#"
+    href: "https://www.instagram.com/positivetravelandholidays"
   }
 ];
 
 const contactInfo = [
   {
     icon: Phone,
-    content: "+1 234 567 890",
-    href: "tel:+1234567890"
+    content: "+919497458282",
+    href: "tel:+919497458282"
   },
   {
     icon: Mail,
-    content: "hello@positivetravel.com",
-    href: "mailto:hello@positivetravel.com"
+    content: "positivetravelandholidays@gmail.com",
+    href: "mailto:positivetravelandholidays@gmail.com"
   },
   {
     icon: MessageCircle,
-    content: "+1 234 567 890",
-    href: "https://wa.me/1234567890"
+    content: "+917593946666",
+    href: "https://wa.me/917593946666"
   }
 ];
 
@@ -53,18 +53,31 @@ export default function Footer() {
             <h3 className="text-2xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Our Vision</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#vision" className="text-gray-400 hover:text-white transition-colors">Our Vision</a></li>
+              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
+              <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-2xl font-bold mb-4">Visit & Follow Us</h3>
+            <h3 className="text-2xl font-bold mb-4">Get In Touch</h3>
             <div className="space-y-4">
               {socialInfo.map((item) => (
                 <a
                   key={item.title}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
+                >
+                  <item.icon className="w-5 h-5" />
+                  <span>{item.content}</span>
+                </a>
+              ))}
+              {contactInfo.map((item) => (
+                <a
+                  key={item.content}
                   href={item.href}
                   className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
                 >

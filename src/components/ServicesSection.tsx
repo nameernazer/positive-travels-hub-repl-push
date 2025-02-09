@@ -27,7 +27,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="section-padding">
+    <section className="section-padding" id="services">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +37,7 @@ export default function ServicesSection() {
           className="text-center mb-16"
         >
           <span className="text-primary font-medium uppercase tracking-wider">Our Services</span>
-          <h2 className="mt-4 text-5xl md:text-6xl font-bold tracking-tight">
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
             Comprehensive Travel Solutions
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">

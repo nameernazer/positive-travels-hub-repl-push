@@ -6,23 +6,23 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    content: "+1 234 567 890",
+    content: "+919497458282",
     action: "Call Now",
-    href: "tel:+1234567890"
+    href: "tel:+919497458282"
   },
   {
     icon: Mail,
     title: "Email Us",
-    content: "hello@positivetravel.com",
+    content: "positivetravelandholidays@gmail.com",
     action: "Send Email",
-    href: "mailto:hello@positivetravel.com"
+    href: "mailto:positivetravelandholidays@gmail.com"
   },
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    content: "+1 234 567 890",
+    content: "+917593946666",
     action: "Message Us",
-    href: "https://wa.me/1234567890"
+    href: "https://wa.me/917593946666"
   }
 ];
 
@@ -38,7 +38,7 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <span className="text-primary font-medium uppercase tracking-wider">Contact Us</span>
-          <h2 className="mt-4 text-5xl md:text-6xl font-bold tracking-tight">
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
             Let's Plan Your Next Adventure
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
@@ -47,7 +47,7 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {contactInfo.map((item, index) => (
             <motion.a
               key={item.title}

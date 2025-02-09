@@ -22,7 +22,7 @@ const features = [
 
 export default function VisionSection() {
   return (
-    <section className="section-padding bg-secondary/30">
+    <section className="section-padding bg-secondary/30" id="vision">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -32,7 +32,7 @@ export default function VisionSection() {
           className="text-center mb-16"
         >
           <span className="text-primary font-medium uppercase tracking-wider">Our Vision</span>
-          <h2 className="mt-4 text-5xl md:text-6xl font-bold tracking-tight">
+          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
             Creating Memories That Last a Lifetime
           </h2>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
