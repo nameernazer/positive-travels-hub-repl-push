@@ -6,7 +6,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    content: "+919497458282",
+    content: "+91 94974 58282",
     action: "Call Now",
     href: "tel:+919497458282"
   },
@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    content: "+917593946666",
+    content: "+91 75939 46666",
     action: "Message Us",
     href: "https://wa.me/917593946666"
   }

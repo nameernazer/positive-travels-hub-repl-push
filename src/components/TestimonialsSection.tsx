@@ -5,19 +5,19 @@ import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 
 const testimonials = [
   {
-    quote: "The best travel experience I've ever had. The attention to detail and personalized service was outstanding.",
-    author: "Sarah Johnson",
-    location: "New York, USA"
+    quote: "The best travel experience I've ever had. Their attention to detail and personalized service was outstanding.",
+    author: "Priya Menon",
+    location: "Kerala, India"
   },
   {
-    quote: "They made planning our honeymoon completely stress-free. Every recommendation was perfect!",
-    author: "Michael & Emma",
-    location: "London, UK"
+    quote: "They made planning our family trip completely stress-free. Every recommendation was perfect!",
+    author: "Rajesh Kumar",
+    location: "Karnataka, India"
   },
   {
     quote: "Professional, reliable, and truly exceptional service. Will definitely book with them again.",
-    author: "David Chen",
-    location: "Singapore"
+    author: "Anitha Krishnan",
+    location: "Tamil Nadu, India"
   }
 ];
 

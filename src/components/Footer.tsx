@@ -1,11 +1,11 @@
 
-import { MapPin, Phone, Mail, Instagram, MessageCircle } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram, MessageCircle, Facebook } from 'lucide-react';
 
 const socialInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
-    content: "Edakkulam, Thirunnavaya, Malappuram, Kerala, India",
+    content: "Positive Travel and Holidays, Malappuram, Kerala, India",
     action: "Get Directions",
     href: "https://www.google.com/maps/place/POSITIVE+TRAVEL+AND+HOLIDAYS/@10.877443,75.9829016,17z/data=!3m1!4b1!4m6!3m5!1s0x3ba7b1196a6f0e15:0x8a8842a1bc3902c9!8m2!3d10.8774377!4d75.9854765!16s%2Fg%2F11lmqz43ly?entry=ttu"
   },
@@ -15,13 +15,20 @@ const socialInfo = [
     content: "@positivetravelandholidays",
     action: "View Profile",
     href: "https://www.instagram.com/positivetravelandholidays"
+  },
+  {
+    icon: Facebook,
+    title: "Facebook",
+    content: "Positive Travel and Holidays",
+    action: "Visit Page",
+    href: "https://www.facebook.com/share/19rhFzkc4q/"
   }
 ];
 
 const contactInfo = [
   {
     icon: Phone,
-    content: "+919497458282",
+    content: "+91 94974 58282",
     href: "tel:+919497458282"
   },
   {
@@ -31,7 +38,7 @@ const contactInfo = [
   },
   {
     icon: MessageCircle,
-    content: "+917593946666",
+    content: "+91 75939 46666",
     href: "https://wa.me/917593946666"
   }
 ];

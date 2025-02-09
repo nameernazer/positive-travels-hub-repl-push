@@ -32,7 +32,7 @@ export default function HeroSection() {
         <img 
           src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
           alt="Positive Travel Logo" 
-          className="h-16 w-auto"
+          className="h-12 w-auto sm:h-14" // Reduced logo size
         />
       </div>
       
