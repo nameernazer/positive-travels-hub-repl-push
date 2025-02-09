@@ -31,32 +31,46 @@ export default function HeroSection() {
       {/* Navigation Bar */}
       <div className="absolute top-0 left-0 right-0 z-30 bg-transparent">
         <div className="container-custom">
-          <nav className="flex items-center justify-between py-4">
-            <div className="flex items-center">
+          <nav className="flex flex-col md:flex-row items-start md:items-center justify-between py-4">
+            <div className="flex flex-col items-start w-full md:w-auto">
               <img 
                 src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
                 alt="Positive Travel Logo" 
-                className="h-12 w-auto sm:h-14"
+                className="h-10 w-auto"
               />
-            </div>
-            
-            <div className="flex items-center space-x-8">
-              <a href="#" className="text-white hover:text-white/80 transition-colors">Home</a>
-              <a href="#about" className="text-white hover:text-white/80 transition-colors">About</a>
-              <a href="#services" className="text-white hover:text-white/80 transition-colors">Services</a>
-              <a href="#contact" className="text-white hover:text-white/80 transition-colors">Contact Us</a>
+              <div className="flex flex-wrap items-center mt-4 space-x-6">
+                <a href="#" className="text-white hover:text-white/80 transition-colors">Home</a>
+                <a href="#about" className="text-white hover:text-white/80 transition-colors">About</a>
+                <a href="#services" className="text-white hover:text-white/80 transition-colors">Services</a>
+                <a href="#contact" className="text-white hover:text-white/80 transition-colors">Contact Us</a>
+              </div>
             </div>
 
-            <div className="flex items-center space-x-4">
-              <span className="text-white text-sm hidden md:inline-block">+91 94974 58282</span>
-              <div className="flex items-center space-x-2">
-                <a href="https://www.facebook.com/share/19rhFzkc4q/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
+            <div className="flex flex-col md:flex-row items-center mt-4 md:mt-0 w-full md:w-auto">
+              <span className="text-white text-sm mb-4 md:mb-0">+91 94974 58282</span>
+              <div className="flex items-center space-x-6 md:ml-8">
+                <a 
+                  href="https://www.facebook.com/share/19rhFzkc4q/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-white hover:text-white/80 transition-colors"
+                >
                   <Facebook className="w-5 h-5" />
                 </a>
-                <a href="https://www.instagram.com/positivetravelandholidays" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
+                <a 
+                  href="https://www.instagram.com/positivetravelandholidays" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-white hover:text-white/80 transition-colors"
+                >
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a href="https://wa.me/917593946666" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
+                <a 
+                  href="https://wa.me/917593946666" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-white hover:text-white/80 transition-colors"
+                >
                   <MessageCircle className="w-5 h-5" />
                 </a>
               </div>
