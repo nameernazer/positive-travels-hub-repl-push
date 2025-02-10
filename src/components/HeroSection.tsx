@@ -61,22 +61,32 @@ export default function HeroSection() {
       {/* Navigation Bar */}
       <div className="absolute top-0 left-0 right-0 z-30 bg-transparent">
         <div className="container-custom">
-          <nav className="flex items-center justify-between py-4">
-            {/* Logo */}
-            <img 
-              src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
-              alt="Positive Travel Logo" 
-              className="h-12 md:h-16 w-auto"
-            />
+          <nav className="flex flex-col md:flex-row items-start md:items-center justify-between py-4">
+            <div className="flex w-full md:w-auto items-center justify-between">
+              {/* Logo */}
+              <img 
+                src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
+                alt="Positive Travel Logo" 
+                className="h-12 md:h-16 w-auto"
+              />
+              
+              {/* Mobile Menu Button */}
+              <button 
+                onClick={() => setIsMenuOpen(!isMenuOpen)} 
+                className="md:hidden text-white p-2 z-50"
+              >
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
 
-            {/* Phone Number - Desktop Only */}
-            <div className="hidden md:block text-center flex-1">
+            {/* Phone Number - Desktop Only, More Centered */}
+            <div className="hidden md:block text-center flex-1 ml-12">
               <span className="text-white text-sm">
                 Make a call: +91 94974 58282
               </span>
             </div>
 
-            {/* Desktop Navigation - Hidden on Mobile */}
+            {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <div className="flex items-center space-x-8">
                 <a href="#" className="text-white hover:text-white/80 transition-colors">Home</a>
@@ -96,15 +106,20 @@ export default function HeroSection() {
                 </a>
               </div>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button 
-              onClick={() => setIsMenuOpen(!isMenuOpen)} 
-              className="md:hidden text-white p-2 z-50"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </nav>
+
+          {/* Horizontal Line for Desktop */}
+          <div className="hidden md:block h-px bg-white/20 my-4" />
+
+          {/* Mobile Navigation Links - Below Logo */}
+          <div className="hidden">
+            <div className="flex flex-col space-y-4 mt-4">
+              <a href="#" className="text-white hover:text-white/80 transition-colors">Home</a>
+              <a href="#about" className="text-white hover:text-white/80 transition-colors">About</a>
+              <a href="#services" className="text-white hover:text-white/80 transition-colors">Services</a>
+              <a href="#contact" className="text-white hover:text-white/80 transition-colors">Contact Us</a>
+            </div>
+          </div>
 
           {/* Mobile Menu */}
           <AnimatePresence>
@@ -115,7 +130,7 @@ export default function HeroSection() {
                 exit="closed"
                 variants={menuVariants}
                 transition={{ duration: 0.3 }}
-                className="fixed top-0 right-0 h-screen w-[80%] bg-black/95 z-40 md:hidden"
+                className="fixed top-0 right-0 h-screen w-[40%] bg-black/95 z-40 md:hidden"
               >
                 <div className="flex flex-col items-center justify-center h-full">
                   <motion.div className="flex flex-col items-center space-y-8">
@@ -180,7 +195,7 @@ export default function HeroSection() {
             className="space-y-8"
           >
             <h1 className="text-5xl md:text-7xl font-bold text-white max-w-5xl mx-auto leading-tight tracking-tight">
-              Experience the World with Positive Travel
+              Experience the World with Positive Travel and Holidays
             </h1>
             
             <p className="text-2xl md:text-4xl text-white/90 max-w-3xl mx-auto font-light tracking-wide">
