@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronRight, Facebook, Instagram, MessageCircle, Menu, X, Phone } from 'lucide-react';
+import { ChevronRight, Facebook, Instagram, MessageCircle, Menu, X } from 'lucide-react';
 
 const images = [
   "https://images.unsplash.com/photo-1478547522833-c7f23b7e8f91", // Snow-capped mountains
@@ -10,6 +10,10 @@ const images = [
   "https://images.unsplash.com/photo-1601823984263-b87b59798b00", // Winter landscape
   "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e", // Temple at night
   "https://images.unsplash.com/photo-1493997181344-712f2f19d87a", // Mountain lake
+  "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd", // Mountain sunrise
+  "https://images.unsplash.com/photo-1467377791767-c929b5dc9a23", // Scenic valley
+  "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb", // Tropical beach
+  "https://images.unsplash.com/photo-1597998593641-5c27455adf87", // Desert landscape
 ];
 
 export default function HeroSection() {
@@ -33,27 +37,21 @@ export default function HeroSection() {
     closed: {
       opacity: 0,
       x: "100%",
-      transition: {
-        duration: 0.3
-      }
     },
     open: {
       opacity: 1,
       x: "0%",
-      transition: {
-        duration: 0.3
-      }
     }
   };
 
   const menuItemVariants = {
-    closed: { opacity: 0, y: 20 },
+    closed: { opacity: 0, x: 20 },
     open: i => ({
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
         delay: i * 0.1,
-        duration: 0.3
+        duration: 0.2
       }
     })
   };
@@ -68,26 +66,25 @@ export default function HeroSection() {
             <img 
               src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
               alt="Positive Travel Logo" 
-              className="h-16 w-auto"
+              className="h-12 md:h-16 w-auto"
             />
 
-            {/* Phone Number - Centered */}
-            <div className="flex-1 text-center">
-              <span className="text-white text-sm inline-flex items-center gap-2">
-                <Phone className="w-4 h-4" />
+            {/* Phone Number - Desktop Only */}
+            <div className="hidden md:block text-center flex-1">
+              <span className="text-white text-sm">
                 Make a call: +91 94974 58282
               </span>
             </div>
 
             {/* Desktop Navigation - Hidden on Mobile */}
             <div className="hidden md:flex items-center space-x-8">
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-8">
                 <a href="#" className="text-white hover:text-white/80 transition-colors">Home</a>
                 <a href="#about" className="text-white hover:text-white/80 transition-colors">About</a>
                 <a href="#services" className="text-white hover:text-white/80 transition-colors">Services</a>
                 <a href="#contact" className="text-white hover:text-white/80 transition-colors">Contact Us</a>
               </div>
-              <div className="flex items-center space-x-6">
+              <div className="flex items-center space-x-8">
                 <a href="https://www.facebook.com/share/19rhFzkc4q/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
                   <Facebook className="w-5 h-5" />
                 </a>
@@ -103,7 +100,7 @@ export default function HeroSection() {
             {/* Mobile Menu Button */}
             <button 
               onClick={() => setIsMenuOpen(!isMenuOpen)} 
-              className="md:hidden text-white p-2"
+              className="md:hidden text-white p-2 z-50"
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -117,7 +114,8 @@ export default function HeroSection() {
                 animate="open"
                 exit="closed"
                 variants={menuVariants}
-                className="fixed inset-0 bg-black/95 z-50 md:hidden"
+                transition={{ duration: 0.3 }}
+                className="fixed top-0 right-0 h-screen w-[80%] bg-black/95 z-40 md:hidden"
               >
                 <div className="flex flex-col items-center justify-center h-full">
                   <motion.div className="flex flex-col items-center space-y-8">
