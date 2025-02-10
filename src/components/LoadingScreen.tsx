@@ -1,5 +1,6 @@
 
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 const LoadingScreen = () => {
   const dots = [...Array(12)].map((_, i) => (
@@ -33,6 +34,7 @@ const LoadingScreen = () => {
           src="/lovable-uploads/7edb967b-2e30-4aa9-a94c-c2684850f4e2.png"
           alt="Loading Logo"
           className="w-24 h-24 object-contain"
+          loading="eager"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           {dots}
