@@ -24,20 +24,24 @@ export default function HeroSection() {
   const [imagesLoaded, setImagesLoaded] = useState(0);
 
   useEffect(() => {
-    // Preload images
-    images.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-      img.onload = () => {
-        setImagesLoaded(prev => {
-          const newCount = prev + 1;
-          if (newCount === images.length) {
-            setIsLoading(false);
-          }
-          return newCount;
-        });
-      };
-    });
+    let allImagesLoaded = 0;
+    const loadImage = (src: string) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = src;
+        img.onload = () => resolve(src);
+        img.onerror = reject;
+      });
+    };
+
+    Promise.all(images.map(loadImage))
+      .then(() => {
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error loading images:', error);
+        setIsLoading(false); // Still hide loading screen even if some images fail
+      });
 
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
