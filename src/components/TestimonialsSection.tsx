@@ -58,12 +58,13 @@ export default function TestimonialsSection() {
           </h2>
         </motion.div>
 
-        <div className="max-w-4xl mx-auto relative">
+        <div className="max-w-4xl mx-auto relative overflow-hidden">
           <motion.div
             key={currentTestimonial}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
+            initial={{ opacity: 0, x: 100 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -100 }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             className="text-center"
           >
             <Quote className="w-12 h-12 text-primary/20 mx-auto mb-6" />

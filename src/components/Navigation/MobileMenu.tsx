@@ -1,6 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -31,6 +32,22 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
     })
   };
 
+  const menuItems = [
+    { label: 'Home', path: '/' },
+    { label: 'Destinations', path: '/destinations' },
+    { label: 'About', path: '#about' },
+    { label: 'Services', path: '#services' },
+    { label: 'Contact Us', path: '#contact' }
+  ];
+
+  const handleClick = (path: string) => {
+    setIsMenuOpen(false);
+    if (path.startsWith('#')) {
+      const element = document.querySelector(path);
+      element?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <motion.div
       initial="closed"
@@ -42,21 +59,33 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
     >
       <div className="w-full h-full flex flex-col items-end pr-8 pt-32">
         <motion.div className="flex flex-col items-end space-y-8">
-          {['Home', 'About', 'Services', 'Contact Us'].map((item, i) => (
-            <motion.a
-              key={item}
-              href={item === 'Home' ? '#' : `#${item.toLowerCase()}`}
+          {menuItems.map((item, i) => (
+            <motion.div
+              key={item.label}
               custom={i}
               variants={menuItemVariants}
-              className="text-white text-2xl font-medium hover:text-white/80 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
             >
-              {item}
-            </motion.a>
+              {item.path.startsWith('#') ? (
+                <button
+                  onClick={() => handleClick(item.path)}
+                  className="text-white text-2xl font-medium hover:text-white/80 transition-colors"
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <Link
+                  to={item.path}
+                  className="text-white text-2xl font-medium hover:text-white/80 transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              )}
+            </motion.div>
           ))}
           <motion.div 
             variants={menuItemVariants}
-            custom={4}
+            custom={5}
             className="flex items-center space-x-8 mt-8"
           >
             <a href="https://www.facebook.com/share/19rhFzkc4q/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
