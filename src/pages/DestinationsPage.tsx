@@ -1,17 +1,21 @@
-
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 const destinations = [
   {
-    region: "Europe",
-    image: "https://images.unsplash.com/photo-1493707553966-283afac8c358",
-    description: "Explore the rich history and diverse cultures of Europe"
-  },
-  {
     region: "Asia",
     image: "https://images.unsplash.com/photo-1480796927426-f609979314bd",
     description: "Discover the wonders of ancient traditions and modern marvels"
+  },
+  {
+    region: "Europe",
+    image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed",
+    description: "Explore the rich history and diverse cultures of Europe"
+  },
+  {
+    region: "Middle East",
+    image: "https://images.unsplash.com/photo-1466442929976-97f336a657be",
+    description: "Experience the blend of tradition and luxury in the Middle East"
   },
   {
     region: "North America",
@@ -22,16 +26,6 @@ const destinations = [
     region: "South America",
     image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325",
     description: "Adventure through lush rainforests and ancient ruins"
-  },
-  {
-    region: "Africa",
-    image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5",
-    description: "Embark on safaris and witness breathtaking landscapes"
-  },
-  {
-    region: "Oceania",
-    image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9",
-    description: "Relax on pristine beaches and dive into crystal-clear waters"
   }
 ];
 
