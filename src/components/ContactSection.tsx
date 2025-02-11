@@ -61,9 +61,12 @@ export default function ContactSection() {
               <item.icon className="w-10 h-10 text-primary mb-4" />
               <h3 className="text-lg font-semibold">{item.title}</h3>
               <p className="text-muted-foreground mt-2">{item.content}</p>
-              <p className="mt-4 text-primary font-medium group-hover:text-primary/80 transition-colors">
-                {item.action} →
-              </p>
+              <div className="mt-4 flex items-center justify-start">
+                <span className="text-primary font-medium group-hover:text-primary/80 transition-colors inline-flex items-center">
+                  {item.action}
+                  <span className="inline-block ml-1 relative top-[1px]">→</span>
+                </span>
+              </div>
             </motion.a>
           ))}
         </div>

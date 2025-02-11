@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
@@ -6,16 +5,16 @@ import LoadingScreen from './LoadingScreen';
 import { Navigation } from './Navigation/Navigation';
 
 const images = [
-  "https://images.unsplash.com/photo-1478547522833-c7f23b7e8f91",
-  "https://images.unsplash.com/photo-1545569341-9eb8b30979d9",
-  "https://images.unsplash.com/photo-1528164344705-47542687000d",
-  "https://images.unsplash.com/photo-1601823984263-b87b59798b00",
-  "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e",
-  "https://images.unsplash.com/photo-1493997181344-712f2f19d87a",
-  "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd",
-  "https://images.unsplash.com/photo-1467377791767-c929b5dc9a23",
-  "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb",
-  "https://images.unsplash.com/photo-1597998593641-5c27455adf87",
+  "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e", // Japanese Temple at Night
+  "https://images.unsplash.com/photo-1493997181344-712f2f19d87a", // Scenic Lake View
+  "https://images.unsplash.com/photo-1514282401047-d79a71a590e8", // Japanese Temple
+  "https://images.unsplash.com/photo-1601823984263-b87b59798b00", // Snowy Mountains
+  "https://images.unsplash.com/photo-1519677100203-a0e668c92439", // Beautiful Mosque
+  "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd", // Mountain Sunrise
+  "https://images.unsplash.com/photo-1467377791767-c929b5dc9a23", // Scenic Valley
+  "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f", // Traditional Market
+  "https://images.unsplash.com/photo-1597998593641-5c27455adf87", // Desert Landscape
+  "https://images.unsplash.com/photo-1518684079-3c830dcef090", // Sunset at Beach
 ];
 
 export default function HeroSection() {
@@ -47,9 +46,9 @@ export default function HeroSection() {
     return () => clearInterval(timer);
   }, []);
 
-  const scrollToAbout = () => {
-    const aboutSection = document.getElementById('about');
-    aboutSection?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    section?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -66,7 +65,7 @@ export default function HeroSection() {
             key={img}
             initial={{ opacity: 0 }}
             animate={{ opacity: index === currentImage ? 1 : 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1.5 }}
             className="absolute inset-0"
             style={{
               backgroundImage: `url(${img})`,
@@ -95,7 +94,7 @@ export default function HeroSection() {
               </p>
               
               <motion.button 
-                onClick={scrollToAbout}
+                onClick={() => scrollToSection('about')}
                 className="mt-8 px-8 py-4 bg-primary text-white rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-primary/90 transition-colors text-lg"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

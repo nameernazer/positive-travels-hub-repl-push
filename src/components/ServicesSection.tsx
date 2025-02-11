@@ -58,9 +58,12 @@ export default function ServicesSection() {
               <service.icon className="w-12 h-12 text-primary" />
               <h3 className="mt-4 text-xl font-semibold">{service.title}</h3>
               <p className="mt-2 text-muted-foreground">{service.description}</p>
-              <button className="mt-4 text-primary font-medium group-hover:text-primary/80 transition-colors">
-                Learn More →
-              </button>
+              <div className="mt-4 flex items-center justify-start">
+                <span className="text-primary font-medium group-hover:text-primary/80 transition-colors inline-flex items-center">
+                  Learn More
+                  <span className="inline-block ml-1 relative top-[1px]">→</span>
+                </span>
+              </div>
             </motion.div>
           ))}
         </div>
