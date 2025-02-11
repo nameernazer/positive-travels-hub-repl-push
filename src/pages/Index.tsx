@@ -6,18 +6,22 @@ import ServicesSection from "@/components/ServicesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import LoadingScreen from "@/components/LoadingScreen";
 
 const Index = () => {
   return (
-    <main className="min-h-screen bg-white">
-      <HeroSection />
-      <AboutSection />
-      <VisionSection />
-      <ServicesSection />
-      <TestimonialsSection />
-      <ContactSection />
-      <Footer />
-    </main>
+    <>
+      <LoadingScreen />
+      <main className="min-h-screen bg-white">
+        <HeroSection />
+        <AboutSection />
+        <VisionSection />
+        <ServicesSection />
+        <TestimonialsSection />
+        <ContactSection />
+        <Footer />
+      </main>
+    </>
   );
 };
 
