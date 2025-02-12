@@ -34,10 +34,10 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
 
   const menuItems = [
     { label: 'Home', path: '/' },
-    { label: 'Destinations', path: '/destinations' },
     { label: 'About', path: '#about' },
     { label: 'Services', path: '#services' },
-    { label: 'Contact Us', path: '#contact' }
+    { label: 'Contact Us', path: '#contact' },
+    { label: 'Destinations', path: '/destinations' }
   ];
 
   const handleClick = (path: string) => {
