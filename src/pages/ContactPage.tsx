@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative h-48 bg-cover bg-center mb-8" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80')" }}>
+      <div className="relative h-48 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80')" }}>
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl font-bold text-white">Get in Touch</h1>
@@ -15,10 +15,6 @@ const ContactPage = () => {
 
       <div className="container-custom">
         <div className="flex flex-col gap-4">
-          <Link to="/" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Back to Home
-          </Link>
           <Link to="/" className="flex flex-col sm:flex-row items-center gap-3">
             <img 
               src="/lovable-uploads/8907c8a8-e2fd-447f-81ef-c2b9988b4098.png" 
@@ -131,6 +127,16 @@ const ContactPage = () => {
             <p className="text-muted-foreground">@positivetravelandholidays</p>
           </motion.a>
         </div>
+      </div>
+
+      <div className="container-custom pb-16">
+        <Link 
+          to="/" 
+          className="inline-flex items-center justify-center w-full sm:w-auto gap-2 bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 transition-colors"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          Back to Home Page
+        </Link>
       </div>
     </div>
   );
