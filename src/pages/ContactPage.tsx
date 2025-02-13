@@ -7,13 +7,13 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <div className="container-custom py-8">
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex flex-col sm:flex-row items-center gap-3">
           <img 
             src="/lovable-uploads/8907c8a8-e2fd-447f-81ef-c2b9988b4098.png" 
             alt="Positive Travel Logo" 
-            className="h-12 w-auto"
+            className="h-16 sm:h-12 w-auto"
           />
-          <div>
+          <div className="text-center sm:text-left">
             <h1 className="text-xl font-bold">Positive Travel and Holidays</h1>
             <p className="text-sm text-muted-foreground">Your trusted travel partner</p>
           </div>
