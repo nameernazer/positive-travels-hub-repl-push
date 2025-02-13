@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { Facebook, Instagram, MessageCircle } from 'lucide-react';
+import { Facebook, Instagram, MessageCircle, Home, User, Settings, Target, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface MobileMenuProps {
@@ -33,11 +33,11 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
   };
 
   const menuItems = [
-    { label: 'Home', path: '/' },
-    { label: 'About', path: '#about' },
-    { label: 'Services', path: '#services' },
-    { label: 'Contact Us', path: '#contact' },
-    { label: 'Destinations', path: '/destinations' }
+    { label: 'Home', path: '/', icon: Home },
+    { label: 'About', path: '#about', icon: User },
+    { label: 'Services', path: '#services', icon: Settings },
+    { label: 'Our Vision', path: '#vision', icon: Target },
+    { label: 'Destinations', path: '/destinations', icon: MapPin }
   ];
 
   const handleClick = (path: string) => {
@@ -68,16 +68,18 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
               {item.path.startsWith('#') ? (
                 <button
                   onClick={() => handleClick(item.path)}
-                  className="text-white text-2xl font-medium hover:text-white/80 transition-colors"
+                  className="text-white text-2xl font-medium hover:text-white/80 transition-colors flex items-center gap-3"
                 >
+                  <item.icon className="w-6 h-6" />
                   {item.label}
                 </button>
               ) : (
                 <Link
                   to={item.path}
-                  className="text-white text-2xl font-medium hover:text-white/80 transition-colors"
+                  className="text-white text-2xl font-medium hover:text-white/80 transition-colors flex items-center gap-3"
                   onClick={() => setIsMenuOpen(false)}
                 >
+                  <item.icon className="w-6 h-6" />
                   {item.label}
                 </Link>
               )}
