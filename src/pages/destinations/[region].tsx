@@ -89,21 +89,23 @@ const DestinationPage = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
-            <motion.div
+            <Link 
               key={service.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              className="p-6 border rounded-lg hover:bg-secondary/50 transition-colors"
+              to={service.link}
+              className="block"
             >
-              <service.icon className="w-12 h-12 text-primary mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-muted-foreground mb-4">{service.description}</p>
-              <Link to={service.link} className="text-primary hover:text-primary/80 transition-colors">
-                Learn More →
-              </Link>
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="p-6 border rounded-lg hover:bg-secondary/50 transition-colors h-full"
+              >
+                <service.icon className="w-12 h-12 text-primary mb-4" />
+                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                <p className="text-muted-foreground">{service.description}</p>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>

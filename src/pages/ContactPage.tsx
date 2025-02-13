@@ -6,7 +6,14 @@ import { Link } from 'react-router-dom';
 const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      <div className="container-custom py-8">
+      <div className="relative h-48 bg-cover bg-center mb-8" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80')" }}>
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <h1 className="text-4xl font-bold text-white">Get in Touch</h1>
+        </div>
+      </div>
+
+      <div className="container-custom">
         <div className="flex flex-col gap-4">
           <Link to="/" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
             <ArrowLeft className="w-5 h-5 mr-2" />
@@ -16,7 +23,7 @@ const ContactPage = () => {
             <img 
               src="/lovable-uploads/8907c8a8-e2fd-447f-81ef-c2b9988b4098.png" 
               alt="Positive Travel Logo" 
-              className="h-16 sm:h-12 w-auto"
+              className="h-12 sm:h-10 w-auto"
             />
             <div className="text-center sm:text-left">
               <h1 className="text-xl font-bold">Positive Travel and Holidays</h1>
@@ -33,7 +40,7 @@ const ContactPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             We're here to make your travel dreams a reality. Our dedicated team provides 24/7 support 
             to ensure your journey is seamless from start to finish.
