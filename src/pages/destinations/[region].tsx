@@ -45,16 +45,16 @@ const services = [
     link: "/services/flights"
   },
   {
+    icon: FileText,
+    title: "Visa Services",
+    description: "Complete visa processing support",
+    link: "/services/visa"
+  },
+  {
     icon: Hotel,
     title: "Hotel Accommodations",
     description: "Handpicked hotels and resorts for every budget",
     link: "/services/hotels"
-  },
-  {
-    icon: FileText,
-    title: "Visa Assistance",
-    description: "Complete visa processing support",
-    link: "/services/visa"
   },
   {
     icon: Compass,
@@ -85,7 +85,7 @@ const DestinationPage = () => {
           </p>
         </div>
 
-        <h2 className="text-3xl font-bold text-center mb-12">Our Services in {destination.title}</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Our Services for {destination.title}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (

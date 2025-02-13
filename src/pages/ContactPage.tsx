@@ -1,23 +1,29 @@
 
 import { motion } from 'framer-motion';
-import { Phone, Mail, MessageCircle, MapPin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MessageCircle, MapPin, Facebook, Instagram, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <div className="container-custom py-8">
-        <Link to="/" className="flex flex-col sm:flex-row items-center gap-3">
-          <img 
-            src="/lovable-uploads/8907c8a8-e2fd-447f-81ef-c2b9988b4098.png" 
-            alt="Positive Travel Logo" 
-            className="h-16 sm:h-12 w-auto"
-          />
-          <div className="text-center sm:text-left">
-            <h1 className="text-xl font-bold">Positive Travel and Holidays</h1>
-            <p className="text-sm text-muted-foreground">Your trusted travel partner</p>
-          </div>
-        </Link>
+        <div className="flex flex-col gap-4">
+          <Link to="/" className="inline-flex items-center text-primary hover:text-primary/80 transition-colors">
+            <ArrowLeft className="w-5 h-5 mr-2" />
+            Back to Home
+          </Link>
+          <Link to="/" className="flex flex-col sm:flex-row items-center gap-3">
+            <img 
+              src="/lovable-uploads/8907c8a8-e2fd-447f-81ef-c2b9988b4098.png" 
+              alt="Positive Travel Logo" 
+              className="h-16 sm:h-12 w-auto"
+            />
+            <div className="text-center sm:text-left">
+              <h1 className="text-xl font-bold">Positive Travel and Holidays</h1>
+              <p className="text-sm text-muted-foreground">Your trusted travel partner</p>
+            </div>
+          </Link>
+        </div>
       </div>
 
       <div className="container-custom py-16">
