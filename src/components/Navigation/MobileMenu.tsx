@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { Facebook, Instagram, MessageCircle, Home, User, Settings, Target, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface MobileMenuProps {
   isMenuOpen: boolean;
@@ -9,6 +9,8 @@ interface MobileMenuProps {
 }
 
 export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
+  const navigate = useNavigate();
+
   const menuVariants = {
     closed: {
       opacity: 0,
@@ -32,21 +34,26 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
     })
   };
 
+  const handleClick = (path: string) => {
+    setIsMenuOpen(false);
+    if (path.startsWith('#')) {
+      if (window.location.pathname !== '/') {
+        navigate('/', { state: { scrollTo: path.substring(1) } });
+      } else {
+        const element = document.querySelector(path);
+        element?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+    window.scrollTo(0, 0);
+  };
+
   const menuItems = [
     { label: 'Home', path: '/', icon: Home },
     { label: 'About', path: '#about', icon: User },
     { label: 'Services', path: '#services', icon: Settings },
     { label: 'Our Vision', path: '#vision', icon: Target },
-    { label: 'Destinations', path: '/destinations', icon: MapPin }
+    { label: 'Destinations', path: '#destinations', icon: MapPin }
   ];
-
-  const handleClick = (path: string) => {
-    setIsMenuOpen(false);
-    if (path.startsWith('#')) {
-      const element = document.querySelector(path);
-      element?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <motion.div

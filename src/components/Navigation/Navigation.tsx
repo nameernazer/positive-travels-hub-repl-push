@@ -1,8 +1,7 @@
-
 import { motion, AnimatePresence } from 'framer-motion';
 import { Facebook, Instagram, MessageCircle, Menu, X } from 'lucide-react';
 import { MobileMenu } from './MobileMenu';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface NavigationProps {
   isMenuOpen: boolean;
@@ -10,14 +9,21 @@ interface NavigationProps {
 }
 
 export const Navigation = ({ isMenuOpen, setIsMenuOpen }: NavigationProps) => {
+  const navigate = useNavigate();
+
+  const scrollToSection = (id: string) => {
+    if (window.location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: id } });
+    } else {
+      const section = document.getElementById(id);
+      section?.scrollIntoView({ behavior: 'smooth' });
+    }
+    window.scrollTo(0, 0);
+  };
+
   const menuIconVariants = {
     closed: { rotate: 0 },
     open: { rotate: 90 }
-  };
-
-  const scrollToSection = (id: string) => {
-    const section = document.getElementById(id);
-    section?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -73,10 +79,10 @@ export const Navigation = ({ isMenuOpen, setIsMenuOpen }: NavigationProps) => {
 
         <div className="hidden md:flex items-center space-x-8 py-2">
           <Link to="/" className="text-white hover:text-white/80 transition-colors">Home</Link>
-          <Link to="/destinations" className="text-white hover:text-white/80 transition-colors">Destinations</Link>
+          <button onClick={() => scrollToSection('destinations')} className="text-white hover:text-white/80 transition-colors">Destinations</button>
           <button onClick={() => scrollToSection('about')} className="text-white hover:text-white/80 transition-colors">About Us</button>
           <button onClick={() => scrollToSection('services')} className="text-white hover:text-white/80 transition-colors">Services</button>
-          <button onClick={() => scrollToSection('contact')} className="text-white hover:text-white/80 transition-colors">Contact Us</button>
+          <Link to="/contact" className="text-white hover:text-white/80 transition-colors">Contact Us</Link>
         </div>
       </div>
 

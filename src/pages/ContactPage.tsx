@@ -1,19 +1,24 @@
+
 import { motion } from 'framer-motion';
 import { Phone, Mail, MessageCircle, MapPin, Facebook, Instagram, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const ContactPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative h-48 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80')" }}>
+      <div className="relative h-48 bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/14ee99b5-cc1e-4265-b557-6cf0910113ad.png')" }}>
         <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4">
+        <div className="absolute inset-0 flex items-center justify-center">
           <img 
             src="/lovable-uploads/e2d62c35-e32e-41ac-af36-50b8f35c1e6d.png"
             alt="Positive Travel Logo"
-            className="h-16 w-auto"
+            className="h-24 w-auto"
           />
-          <h1 className="text-4xl font-bold text-white">Get in Touch</h1>
         </div>
       </div>
 
@@ -24,7 +29,7 @@ const ContactPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Reach out to us!</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             We're here to make your travel dreams a reality. Our dedicated team provides 24/7 support 
             to ensure your journey is seamless from start to finish.

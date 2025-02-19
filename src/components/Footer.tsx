@@ -44,6 +44,11 @@ const contactInfo = [
 ];
 
 export default function Footer() {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container-custom py-16">
@@ -59,11 +64,12 @@ export default function Footer() {
           <div>
             <h3 className="text-2xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Home</a></li>
-              <li><a href="#about" className="text-gray-400 hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#vision" className="text-gray-400 hover:text-white transition-colors">Our Vision</a></li>
-              <li><a href="#services" className="text-gray-400 hover:text-white transition-colors">Services</a></li>
-              <li><a href="#contact" className="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+              <li><button onClick={() => scrollToSection('hero')} className="text-gray-400 hover:text-white transition-colors">Home</button></li>
+              <li><button onClick={() => scrollToSection('about')} className="text-gray-400 hover:text-white transition-colors">About Us</button></li>
+              <li><button onClick={() => scrollToSection('vision')} className="text-gray-400 hover:text-white transition-colors">Our Vision</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition-colors">Services</button></li>
+              <li><button onClick={() => scrollToSection('destinations')} className="text-gray-400 hover:text-white transition-colors">Destinations</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-white transition-colors">Contact</button></li>
             </ul>
           </div>
           

@@ -1,5 +1,7 @@
 
 import { motion } from 'framer-motion';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const destinations = [
@@ -36,6 +38,16 @@ const destinations = [
 ];
 
 export default function DestinationsSection() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % destinations.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + destinations.length) % destinations.length);
+  };
+
   return (
     <section className="section-padding bg-white" id="destinations">
       <div className="container-custom">
@@ -55,32 +67,70 @@ export default function DestinationsSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {destinations.map((destination, index) => (
-            <Link to={`/destinations/${destination.region}`} key={destination.region}>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="group relative overflow-hidden rounded-2xl aspect-[4/3]"
-              >
-                <img 
-                  src={destination.image} 
-                  alt={destination.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 p-6 flex flex-col justify-end">
-                  <h3 className="text-2xl font-bold text-white mb-2">{destination.title}</h3>
-                  <p className="text-white/90 mb-4">{destination.description}</p>
-                  <span className="text-white font-medium inline-flex items-center">
-                    Learn More
-                    <span className="ml-2">→</span>
-                  </span>
+        <div className="relative">
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+            >
+              {destinations.map((destination) => (
+                <div 
+                  key={destination.region}
+                  className="w-full flex-shrink-0"
+                >
+                  <Link to={`/destinations/${destination.region}`}>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5 }}
+                      viewport={{ once: true }}
+                      className="group relative overflow-hidden rounded-2xl aspect-[4/3] mx-4"
+                    >
+                      <img 
+                        src={destination.image} 
+                        alt={destination.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 p-6 flex flex-col justify-end">
+                        <h3 className="text-2xl font-bold text-white mb-2">{destination.title}</h3>
+                        <p className="text-white/90 mb-4">{destination.description}</p>
+                        <span className="text-white font-medium inline-flex items-center">
+                          Learn More
+                          <span className="ml-2">→</span>
+                        </span>
+                      </div>
+                    </motion.div>
+                  </Link>
                 </div>
-              </motion.div>
-            </Link>
-          ))}
+              ))}
+            </div>
+          </div>
+          
+          <button
+            onClick={prevSlide}
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-colors"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-colors"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          <div className="flex justify-center mt-4 gap-2">
+            {destinations.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentIndex(index)}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  index === currentIndex ? 'bg-primary' : 'bg-gray-300'
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
