@@ -11,7 +11,7 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative h-48 bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/14ee99b5-cc1e-4265-b557-6cf0910113ad.png')" }}>
+      <div className="relative h-48 bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/589da510-40a1-42fc-b6cc-1d64181eafdb.png')" }}>
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <img 

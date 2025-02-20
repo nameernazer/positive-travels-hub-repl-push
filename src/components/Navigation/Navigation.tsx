@@ -15,10 +15,9 @@ export const Navigation = ({ isMenuOpen, setIsMenuOpen }: NavigationProps) => {
     if (window.location.pathname !== '/') {
       navigate('/', { state: { scrollTo: id } });
     } else {
-      const section = document.getElementById(id);
-      section?.scrollIntoView({ behavior: 'smooth' });
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: 'smooth' });
     }
-    window.scrollTo(0, 0);
   };
 
   const menuIconVariants = {
