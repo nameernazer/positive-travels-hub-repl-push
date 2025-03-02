@@ -55,8 +55,7 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
     { label: 'About', path: '#about', icon: User },
     { label: 'Services', path: '#services', icon: Settings },
     { label: 'Our Vision', path: '#vision', icon: Target },
-    { label: 'Destinations', path: '#destinations', icon: MapPin },
-    { label: 'Contact Us', path: '#contact', icon: MessageCircle }
+    { label: 'Destinations', path: '#destinations', icon: MapPin }
   ];
 
   return (
@@ -87,7 +86,7 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
           ))}
           <motion.div 
             variants={menuItemVariants}
-            custom={6}
+            custom={5}
             className="flex items-center space-x-8 mt-8"
           >
             <a href="https://www.facebook.com/share/19rhFzkc4q/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
