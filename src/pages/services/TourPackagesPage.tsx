@@ -1,115 +1,73 @@
 
 import { useEffect } from 'react';
-import ServiceLayout from '@/components/layouts/ServiceLayout';
-import { Clock, Headphones, CreditCard } from 'lucide-react';
+import ServiceLayout from "@/components/layouts/ServiceLayout";
+import { motion } from "framer-motion";
+import { Clock, Headphones, CreditCard } from "lucide-react";
+
+const features = [
+  {
+    icon: Clock,
+    title: "Customized Tours",
+    description: "Personalized itineraries tailored to your preferences"
+  },
+  {
+    icon: Headphones,
+    title: "Expert Guides",
+    description: "Professional guides for an enriching experience"
+  },
+  {
+    icon: CreditCard,
+    title: "Value Packages",
+    description: "Comprehensive tours at competitive prices"
+  }
+];
 
 const TourPackagesPage = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const features = [
-    {
-      title: "Customized Itineraries",
-      description: "Personalized travel plans tailored to your preferences and schedule"
-    },
-    {
-      title: "Expert Local Guides",
-      description: "Knowledgeable guides who bring destinations to life with their insights"
-    },
-    {
-      title: "All-Inclusive Options",
-      description: "Comprehensive packages covering accommodation, transport, and activities"
-    },
-    {
-      title: "Group Tours",
-      description: "Join like-minded travelers for shared adventures and experiences"
-    },
-    {
-      title: "Luxury Experiences",
-      description: "Premium travel experiences with high-end accommodations and services"
-    },
-    {
-      title: "24/7 Support",
-      description: "Round-the-clock assistance throughout your journey"
-    }
-  ];
-
-  const benefits = [
-    "Stress-free travel planning",
-    "Best value for money",
-    "Authentic local experiences",
-    "Flexible booking options",
-    "Guaranteed departures",
-    "Professional tour management"
-  ];
-
-  const contactInfo = {
-    phone: "+91 94974 58282",
-    email: "positivetravelandholidays@gmail.com",
-    whatsapp: "+91 75939 46666"
-  };
-
   return (
     <ServiceLayout
       title="Tour Packages"
-      description="Discover our carefully curated tour packages designed to give you the best travel experience"
-      bgImage="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800"
+      description="Discover amazing destinations with our curated tour packages"
+      bgImage="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1"
     >
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
-          <div>
-            <Clock className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Instant Booking</h3>
-            <p className="text-muted-foreground">Quick and easy tour package reservations</p>
-          </div>
-          <div>
-            <Headphones className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
-            <p className="text-muted-foreground">Round-the-clock assistance during your tour</p>
-          </div>
-          <div>
-            <CreditCard className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Best Rates</h3>
-            <p className="text-muted-foreground">Guaranteed best prices for all tour packages</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="text-center p-6"
+            >
+              <feature.icon className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground">{feature.description}</p>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-6 text-center">Why Book With Us?</h2>
-          
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-4">Our Features</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {features.map((feature, index) => (
-                <div key={index} className="p-6 border rounded-lg hover:shadow-md transition-shadow">
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div className="mb-12">
-            <h2 className="text-3xl font-bold mb-4">Key Benefits</h2>
-            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-              {benefits.map((benefit, index) => (
-                <li key={index} className="flex items-center gap-2">
-                  <span className="bg-primary/20 text-primary rounded-full p-1">✓</span>
-                  {benefit}
-                </li>
-              ))}
+        <div className="mt-16 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8">Explore Our Tour Packages</h2>
+          <div className="space-y-6">
+            <p className="text-lg text-muted-foreground">
+              Experience the world's most fascinating destinations with our carefully crafted tour packages. Whether you're seeking adventure, culture, or relaxation, we have the perfect itinerary for you.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Our tour packages include:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+              <li>Expertly planned itineraries</li>
+              <li>Professional tour guides</li>
+              <li>Quality accommodations</li>
+              <li>Transportation arrangements</li>
+              <li>Entrance fees and activities</li>
+              <li>24/7 on-tour support</li>
             </ul>
-          </div>
-          
-          <div className="bg-secondary/10 p-6 rounded-lg">
-            <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-            <p className="mb-4">For more information about our tour packages, please get in touch:</p>
-            <div className="space-y-2">
-              <p>Phone: <a href={`tel:${contactInfo.phone}`} className="text-primary hover:underline">{contactInfo.phone}</a></p>
-              <p>Email: <a href={`mailto:${contactInfo.email}`} className="text-primary hover:underline">{contactInfo.email}</a></p>
-              <p>WhatsApp: <a href={`https://wa.me/${contactInfo.whatsapp.replace(/\s+/g, '')}`} className="text-primary hover:underline">{contactInfo.whatsapp}</a></p>
-            </div>
           </div>
         </div>
       </div>

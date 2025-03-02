@@ -1,7 +1,26 @@
 
 import { useEffect } from 'react';
-import ServiceLayout from '@/components/layouts/ServiceLayout';
-import { Clock, Headphones, CreditCard } from 'lucide-react';
+import ServiceLayout from "@/components/layouts/ServiceLayout";
+import { motion } from "framer-motion";
+import { Clock, Headphones, CreditCard } from "lucide-react";
+
+const features = [
+  {
+    icon: Clock,
+    title: "Fast Processing",
+    description: "Quick and efficient visa application processing"
+  },
+  {
+    icon: Headphones,
+    title: "Expert Support",
+    description: "Guidance throughout your visa application process"
+  },
+  {
+    icon: CreditCard,
+    title: "Transparent Pricing",
+    description: "Clear fee structure with no hidden charges"
+  }
+];
 
 const VisaServicesPage = () => {
   useEffect(() => {
@@ -11,45 +30,45 @@ const VisaServicesPage = () => {
   return (
     <ServiceLayout
       title="Visa Services"
-      description="We provide comprehensive visa services to ensure a smooth travel experience"
-      bgImage="https://images.unsplash.com/photo-1569008863968-64d2240bb208"
+      description="Professional visa assistance for hassle-free travel"
+      bgImage="https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81"
     >
       <div className="container-custom py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
-          <div>
-            <Clock className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Fast Processing</h3>
-            <p className="text-muted-foreground">Quick and efficient visa application handling</p>
-          </div>
-          <div>
-            <Headphones className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Expert Guidance</h3>
-            <p className="text-muted-foreground">Professional assistance throughout the process</p>
-          </div>
-          <div>
-            <CreditCard className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Affordable Rates</h3>
-            <p className="text-muted-foreground">Competitive pricing for all visa services</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="text-center p-6"
+            >
+              <feature.icon className="w-12 h-12 text-primary mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground">{feature.description}</p>
+            </motion.div>
+          ))}
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6 text-center">Why Choose Our Visa Services?</h2>
-          
-          <p className="text-lg mb-6">
-            We provide comprehensive visa services to ensure a smooth travel experience. Our team is here to assist you with all your visa needs.
-          </p>
-
-          <h3 className="text-xl font-semibold mb-4">Our visa services include:</h3>
-          
-          <ul className="list-disc list-inside space-y-2 mb-8">
-            <li>Visa consultation and advice</li>
-            <li>Document preparation and submission</li>
-            <li>Tracking and updates on visa status</li>
-            <li>Assistance with visa interviews</li>
-            <li>Express visa processing</li>
-            <li>Multiple visa type handling</li>
-          </ul>
+        <div className="mt-16 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-8">Comprehensive Visa Assistance</h2>
+          <div className="space-y-6">
+            <p className="text-lg text-muted-foreground">
+              Our experienced team provides end-to-end visa assistance for all major destinations. We handle the complexities of visa applications, ensuring a smooth process for our clients.
+            </p>
+            <p className="text-lg text-muted-foreground">
+              Our visa services include:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+              <li>Documentation guidance and verification</li>
+              <li>Application form filling assistance</li>
+              <li>Interview preparation</li>
+              <li>Status tracking</li>
+              <li>24/7 support</li>
+              <li>Express processing options</li>
+            </ul>
+          </div>
         </div>
       </div>
     </ServiceLayout>
