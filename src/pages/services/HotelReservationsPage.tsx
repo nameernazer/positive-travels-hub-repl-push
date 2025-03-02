@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import ServiceLayout from '@/components/layouts/ServiceLayout';
 import { Hotel } from 'lucide-react';
@@ -8,7 +9,11 @@ const HotelReservationsPage = () => {
   }, []);
 
   return (
-    <ServiceLayout>
+    <ServiceLayout
+      title="Hotel Reservations"
+      description="We offer a wide range of hotel options to suit your needs and budget"
+      bgImage="https://images.unsplash.com/photo-1566073771259-6a8506099945"
+    >
       <div className="container-custom py-16">
         <h1 className="text-4xl font-bold mb-8">Hotel Reservations</h1>
         <p className="text-lg mb-4">

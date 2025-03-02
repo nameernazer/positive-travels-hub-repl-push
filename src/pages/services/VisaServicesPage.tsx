@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import ServiceLayout from '@/components/layouts/ServiceLayout';
 import { FileText } from 'lucide-react';
@@ -8,7 +9,11 @@ const VisaServicesPage = () => {
   }, []);
 
   return (
-    <ServiceLayout>
+    <ServiceLayout
+      title="Visa Services"
+      description="We provide comprehensive visa services to ensure a smooth travel experience"
+      bgImage="https://images.unsplash.com/photo-1569008863968-64d2240bb208"
+    >
       <div className="container-custom py-16">
         <h1 className="text-4xl font-bold mb-4">Visa Services</h1>
         <p className="text-lg text-muted-foreground mb-8">

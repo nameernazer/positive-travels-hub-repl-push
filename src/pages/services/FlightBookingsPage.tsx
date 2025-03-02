@@ -1,3 +1,4 @@
+
 import { useEffect } from 'react';
 import ServiceLayout from '@/components/layouts/ServiceLayout';
 import { Plane } from 'lucide-react';
@@ -11,7 +12,7 @@ const FlightBookingsPage = () => {
     <ServiceLayout
       title="Flight Bookings"
       description="Book your flights with confidence. We offer competitive rates and a hassle-free booking experience."
-      icon={Plane}
+      bgImage="https://images.unsplash.com/photo-1436491865332-7a61a109cc05"
     >
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="space-y-4">
