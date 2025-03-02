@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import ServiceLayout from '@/components/layouts/ServiceLayout';
-import { Compass } from 'lucide-react';
+import { Clock, Headphones, CreditCard } from 'lucide-react';
 
 const TourPackagesPage = () => {
   useEffect(() => {
@@ -57,38 +57,59 @@ const TourPackagesPage = () => {
       bgImage="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800"
     >
       <div className="container-custom py-16">
-        <div className="mb-12">
-          <Compass className="w-12 h-12 text-primary mb-4" />
-          <h2 className="text-3xl font-bold mb-4">Our Features</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="p-6 border rounded-lg hover:shadow-md transition-shadow">
-                <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.description}</p>
-              </div>
-            ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
+          <div>
+            <Clock className="w-16 h-16 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Instant Booking</h3>
+            <p className="text-muted-foreground">Quick and easy tour package reservations</p>
+          </div>
+          <div>
+            <Headphones className="w-16 h-16 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
+            <p className="text-muted-foreground">Round-the-clock assistance during your tour</p>
+          </div>
+          <div>
+            <CreditCard className="w-16 h-16 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Best Rates</h3>
+            <p className="text-muted-foreground">Guaranteed best prices for all tour packages</p>
           </div>
         </div>
-        
+
         <div className="mb-12">
-          <h2 className="text-3xl font-bold mb-4">Key Benefits</h2>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {benefits.map((benefit, index) => (
-              <li key={index} className="flex items-center gap-2">
-                <span className="bg-primary/20 text-primary rounded-full p-1">✓</span>
-                {benefit}
-              </li>
-            ))}
-          </ul>
-        </div>
-        
-        <div className="bg-secondary/10 p-6 rounded-lg">
-          <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
-          <p className="mb-4">For more information about our tour packages, please get in touch:</p>
-          <div className="space-y-2">
-            <p>Phone: <a href={`tel:${contactInfo.phone}`} className="text-primary hover:underline">{contactInfo.phone}</a></p>
-            <p>Email: <a href={`mailto:${contactInfo.email}`} className="text-primary hover:underline">{contactInfo.email}</a></p>
-            <p>WhatsApp: <a href={`https://wa.me/${contactInfo.whatsapp.replace(/\s+/g, '')}`} className="text-primary hover:underline">{contactInfo.whatsapp}</a></p>
+          <h2 className="text-3xl font-bold mb-6 text-center">Why Book With Us?</h2>
+          
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-4">Our Features</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {features.map((feature, index) => (
+                <div key={index} className="p-6 border rounded-lg hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold mb-4">Key Benefits</h2>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {benefits.map((benefit, index) => (
+                <li key={index} className="flex items-center gap-2">
+                  <span className="bg-primary/20 text-primary rounded-full p-1">✓</span>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div className="bg-secondary/10 p-6 rounded-lg">
+            <h2 className="text-3xl font-bold mb-4">Contact Us</h2>
+            <p className="mb-4">For more information about our tour packages, please get in touch:</p>
+            <div className="space-y-2">
+              <p>Phone: <a href={`tel:${contactInfo.phone}`} className="text-primary hover:underline">{contactInfo.phone}</a></p>
+              <p>Email: <a href={`mailto:${contactInfo.email}`} className="text-primary hover:underline">{contactInfo.email}</a></p>
+              <p>WhatsApp: <a href={`https://wa.me/${contactInfo.whatsapp.replace(/\s+/g, '')}`} className="text-primary hover:underline">{contactInfo.whatsapp}</a></p>
+            </div>
           </div>
         </div>
       </div>

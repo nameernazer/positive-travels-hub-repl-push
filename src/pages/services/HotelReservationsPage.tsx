@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 import ServiceLayout from '@/components/layouts/ServiceLayout';
-import { Hotel } from 'lucide-react';
+import { Clock, Headphones, CreditCard } from 'lucide-react';
 
 const HotelReservationsPage = () => {
   useEffect(() => {
@@ -11,22 +11,45 @@ const HotelReservationsPage = () => {
   return (
     <ServiceLayout
       title="Hotel Reservations"
-      description="We offer a wide range of hotel options to suit your needs and budget"
+      description="Find your perfect stay with our premium hotel booking service"
       bgImage="https://images.unsplash.com/photo-1566073771259-6a8506099945"
     >
       <div className="container-custom py-16">
-        <h1 className="text-4xl font-bold mb-8">Hotel Reservations</h1>
-        <p className="text-lg mb-4">
-          We offer a wide range of hotel options to suit your needs. Whether you're looking for luxury or budget-friendly accommodations, we have you covered.
-        </p>
-        <p className="text-lg mb-4">
-          Our team is dedicated to finding the perfect hotel for your stay, ensuring a comfortable and enjoyable experience.
-        </p>
-        <p className="text-lg mb-4">
-          Contact us today to start planning your hotel reservations!
-        </p>
-        <div className="mt-8">
-          <Hotel className="w-12 h-12 text-primary mb-4" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-16">
+          <div>
+            <Clock className="w-16 h-16 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Instant Booking</h3>
+            <p className="text-muted-foreground">Quick and easy hotel reservations worldwide</p>
+          </div>
+          <div>
+            <Headphones className="w-16 h-16 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
+            <p className="text-muted-foreground">Round-the-clock assistance for your stay</p>
+          </div>
+          <div>
+            <CreditCard className="w-16 h-16 text-primary mx-auto mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Best Rates</h3>
+            <p className="text-muted-foreground">Guaranteed best prices and special deals</p>
+          </div>
+        </div>
+
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-bold mb-6 text-center">Why Book With Us?</h2>
+          
+          <p className="text-lg mb-6">
+            We partner with the finest hotels worldwide to offer you exceptional accommodations at competitive prices. Our extensive network ensures you'll find the perfect place to stay.
+          </p>
+
+          <h3 className="text-xl font-semibold mb-4">Our hotel booking services include:</h3>
+          
+          <ul className="list-disc list-inside space-y-2 mb-8">
+            <li>Access to luxury and boutique hotels</li>
+            <li>Special corporate rates</li>
+            <li>Group booking discounts</li>
+            <li>Flexible cancellation policies</li>
+            <li>24/7 customer support</li>
+            <li>Personalized recommendations</li>
+          </ul>
         </div>
       </div>
     </ServiceLayout>
