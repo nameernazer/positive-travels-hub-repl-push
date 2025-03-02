@@ -15,7 +15,7 @@ const ContactPage = () => {
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <img 
-            src="/lovable-uploads/e2d62c35-e32e-41ac-af36-50b8f35c1e6d.png"
+            src="/lovable-uploads/fa7c0391-d87d-4242-a8b0-63f9a5909bce.png"
             alt="Positive Travel Logo"
             className="h-24 w-auto"
           />

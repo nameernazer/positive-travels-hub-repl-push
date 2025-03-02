@@ -40,11 +40,14 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
       if (window.location.pathname !== '/') {
         navigate('/', { state: { scrollTo: path.substring(1) } });
       } else {
-        const element = document.querySelector(path);
-        element?.scrollIntoView({ behavior: 'smooth' });
+        const element = document.getElementById(path.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
       }
+    } else {
+      navigate(path);
     }
-    window.scrollTo(0, 0);
   };
 
   const menuItems = [
@@ -52,7 +55,8 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
     { label: 'About', path: '#about', icon: User },
     { label: 'Services', path: '#services', icon: Settings },
     { label: 'Our Vision', path: '#vision', icon: Target },
-    { label: 'Destinations', path: '#destinations', icon: MapPin }
+    { label: 'Destinations', path: '#destinations', icon: MapPin },
+    { label: 'Contact Us', path: '#contact', icon: MessageCircle }
   ];
 
   return (
@@ -72,29 +76,18 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
               custom={i}
               variants={menuItemVariants}
             >
-              {item.path.startsWith('#') ? (
-                <button
-                  onClick={() => handleClick(item.path)}
-                  className="text-white text-2xl font-medium hover:text-white/80 transition-colors flex items-center gap-3"
-                >
-                  <item.icon className="w-6 h-6" />
-                  {item.label}
-                </button>
-              ) : (
-                <Link
-                  to={item.path}
-                  className="text-white text-2xl font-medium hover:text-white/80 transition-colors flex items-center gap-3"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  <item.icon className="w-6 h-6" />
-                  {item.label}
-                </Link>
-              )}
+              <button
+                onClick={() => handleClick(item.path)}
+                className="text-white text-2xl font-medium hover:text-white/80 transition-colors flex items-center gap-3"
+              >
+                <item.icon className="w-6 h-6" />
+                {item.label}
+              </button>
             </motion.div>
           ))}
           <motion.div 
             variants={menuItemVariants}
-            custom={5}
+            custom={6}
             className="flex items-center space-x-8 mt-8"
           >
             <a href="https://www.facebook.com/share/19rhFzkc4q/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-white/80 transition-colors">
