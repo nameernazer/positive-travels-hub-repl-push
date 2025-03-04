@@ -184,18 +184,7 @@ export default function TestimonialsSection() {
               <ChevronLeft className="w-6 h-6" />
             </button>
             
-            <div className="flex justify-center gap-2">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentTestimonial(index)}
-                  className={`w-2 h-2 rounded-full transition-colors ${
-                    index === currentTestimonial ? 'bg-primary' : 'bg-gray-300'
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
-              ))}
-            </div>
+            {/* Removed the dots navigation here */}
             
             <button
               onClick={next}
