@@ -1,7 +1,7 @@
 
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const destinations = [
@@ -39,6 +39,12 @@ const destinations = [
 
 export default function DestinationsSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  // Required minimum swipe distance in pixels
+  const minSwipeDistance = 50;
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % destinations.length);
@@ -47,6 +53,84 @@ export default function DestinationsSection() {
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + destinations.length) % destinations.length);
   };
+
+  // Handle touch start event
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  // Handle touch move event
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  // Handle touch end event
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      nextSlide();
+    } else if (isRightSwipe) {
+      prevSlide();
+    }
+  };
+
+  // Handle mouse drag events for desktop
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [endX, setEndX] = useState(0);
+
+  const onMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.clientX);
+  };
+
+  const onMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      setEndX(e.clientX);
+    }
+  };
+
+  const onMouseUp = () => {
+    if (isDragging) {
+      const distance = startX - endX;
+      
+      if (Math.abs(distance) > minSwipeDistance) {
+        if (distance > 0) {
+          nextSlide();
+        } else {
+          prevSlide();
+        }
+      }
+      
+      setIsDragging(false);
+    }
+  };
+
+  const onMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  // Add keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        prevSlide();
+      } else if (e.key === 'ArrowRight') {
+        nextSlide();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <section className="section-padding bg-white" id="destinations">
@@ -68,9 +152,19 @@ export default function DestinationsSection() {
         </motion.div>
 
         <div className="relative">
-          <div className="overflow-hidden">
+          <div 
+            className="overflow-hidden touch-pan-y"
+            ref={sliderRef}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+            onMouseDown={onMouseDown}
+            onMouseMove={onMouseMove}
+            onMouseUp={onMouseUp}
+            onMouseLeave={onMouseLeave}
+          >
             <div 
-              className="flex transition-transform duration-500 ease-out"
+              className={`flex transition-transform duration-500 ease-out ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
               {destinations.map((destination) => (
@@ -90,6 +184,7 @@ export default function DestinationsSection() {
                         src={destination.image} 
                         alt={destination.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        draggable="false"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 p-6 flex flex-col justify-end">
                         <h3 className="text-2xl font-bold text-white mb-2">{destination.title}</h3>
@@ -108,14 +203,16 @@ export default function DestinationsSection() {
           
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-colors z-10"
+            aria-label="Previous destination"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-colors z-10"
+            aria-label="Next destination"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -128,6 +225,7 @@ export default function DestinationsSection() {
                 className={`w-2 h-2 rounded-full transition-colors ${
                   index === currentIndex ? 'bg-primary' : 'bg-gray-300'
                 }`}
+                aria-label={`Go to slide ${index + 1}`}
               />
             ))}
           </div>
