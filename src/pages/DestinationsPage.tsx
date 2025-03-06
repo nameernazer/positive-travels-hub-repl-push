@@ -70,21 +70,27 @@ const DestinationsPage = () => {
         ></div>
         
         <div className="absolute inset-0 bg-black/50" />
+        
+        {/* Logo in top-right corner */}
+        <div className="absolute top-6 right-6 z-10">
+          <Link to="/">
+            {!logoLoaded && (
+              <div className="h-10 w-32 bg-gray-500/20 animate-pulse rounded"></div>
+            )}
+            <img 
+              src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
+              alt="Positive Travel Logo" 
+              className={`h-10 w-auto transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
+              width="128" 
+              height="40"
+              onLoad={() => setLogoLoaded(true)}
+            />
+          </Link>
+        </div>
+        
+        {/* Centered title */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container-custom text-center text-white">
-            <Link to="/">
-              {!logoLoaded && (
-                <div className="h-16 w-48 mx-auto mb-8 bg-gray-500/20 animate-pulse rounded"></div>
-              )}
-              <img 
-                src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
-                alt="Positive Travel Logo" 
-                className={`h-16 mx-auto mb-8 transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
-                width="192" 
-                height="64"
-                onLoad={() => setLogoLoaded(true)}
-              />
-            </Link>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Explore Our Destinations</h1>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
               Discover amazing places and create unforgettable memories

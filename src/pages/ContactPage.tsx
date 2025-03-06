@@ -2,23 +2,45 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, MessageCircle, MapPin, Facebook, Instagram, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const ContactPage = () => {
+  const [logoLoaded, setLogoLoaded] = useState(false);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Preload logo
+    const logo = new Image();
+    logo.src = "/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png";
+    logo.onload = () => setLogoLoaded(true);
   }, []);
 
   return (
     <div className="min-h-screen bg-white">
       <div className="relative h-48 bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/589da510-40a1-42fc-b6cc-1d64181eafdb.png')" }}>
         <div className="absolute inset-0 bg-black/50" />
+        
+        {/* Logo in top-right corner */}
+        <div className="absolute top-6 right-6 z-10">
+          <Link to="/">
+            {!logoLoaded && (
+              <div className="h-10 w-32 bg-gray-500/20 animate-pulse rounded"></div>
+            )}
+            <img 
+              src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
+              alt="Positive Travel Logo" 
+              className={`h-10 w-auto transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
+              width="128" 
+              height="40"
+              onLoad={() => setLogoLoaded(true)}
+            />
+          </Link>
+        </div>
+        
+        {/* Centered title */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <img 
-            src="/lovable-uploads/fa7c0391-d87d-4242-a8b0-63f9a5909bce.png"
-            alt="Positive Travel Logo"
-            className="h-24 w-auto"
-          />
+          <h1 className="text-4xl font-bold text-white">Contact Us</h1>
         </div>
       </div>
 
