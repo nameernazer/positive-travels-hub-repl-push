@@ -77,8 +77,8 @@ const DestinationPage = () => {
     return <div>Destination not found</div>;
   }
 
-  // Add quality and size parameters to image URL
-  const optimizedBgImage = `${destination.bgImage}?auto=format&w=1920&q=75`;
+  // Add quality and size parameters to image URL to optimize
+  const optimizedBgImage = `${destination.bgImage}?auto=format&w=1200&q=60`;
 
   return (
     <ServiceLayout

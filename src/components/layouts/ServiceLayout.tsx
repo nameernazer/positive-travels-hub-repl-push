@@ -13,12 +13,18 @@ interface ServiceLayoutProps {
 
 const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [logoLoaded, setLogoLoaded] = useState(false);
   
   useEffect(() => {
     // Preload the hero image
     const img = new Image();
-    img.src = `${bgImage}?auto=format&w=1920&q=75`;
+    img.src = `${bgImage}?auto=format&w=1200&q=60`;
     img.onload = () => setImageLoaded(true);
+    
+    // Preload the logo
+    const logo = new Image();
+    logo.src = "/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png";
+    logo.onload = () => setLogoLoaded(true);
     
     window.scrollTo(0, 0);
   }, [bgImage]);
@@ -29,21 +35,26 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
         {/* Placeholder before image loads */}
         <div className={`absolute inset-0 bg-gray-300 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}></div>
         
-        {/* Background image */}
+        {/* Background image - using optimized version */}
         <div 
           className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-          style={{ backgroundImage: `url(${bgImage}?auto=format&w=1920&q=75)` }}
+          style={{ backgroundImage: `url(${bgImage}?auto=format&w=1200&q=60)` }}
         ></div>
         
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container-custom text-center text-white">
             <Link to="/">
+              {!logoLoaded && (
+                <div className="h-16 w-48 mx-auto mb-8 bg-gray-500/20 animate-pulse rounded"></div>
+              )}
               <img 
                 src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
                 alt="Positive Travel Logo" 
-                className="h-16 mx-auto mb-8"
-                loading="eager"
+                className={`h-16 mx-auto mb-8 transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
+                width="192" 
+                height="64"
+                onLoad={() => setLogoLoaded(true)}
               />
             </Link>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
