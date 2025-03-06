@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
@@ -7,31 +8,31 @@ const destinations = [
   {
     region: "asia",
     title: "Asia",
-    image: "https://images.unsplash.com/photo-1480796927426-f609979314bd",
+    image: "https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&w=800&q=75",
     description: "Experience ancient traditions and modern wonders"
   },
   {
     region: "europe",
     title: "Europe",
-    image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed",
+    image: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed?auto=format&w=800&q=75",
     description: "Journey through centuries of history and culture"
   },
   {
     region: "middle-east",
     title: "Middle East",
-    image: "https://images.unsplash.com/photo-1466442929976-97f336a657be",
+    image: "https://images.unsplash.com/photo-1466442929976-97f336a657be?auto=format&w=800&q=75",
     description: "Where tradition meets luxury"
   },
   {
     region: "north-america",
     title: "North America",
-    image: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74",
+    image: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74?auto=format&w=800&q=75",
     description: "From coast to coast adventures"
   },
   {
     region: "south-america",
     title: "South America",
-    image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325",
+    image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?auto=format&w=800&q=75",
     description: "Natural wonders and ancient civilizations"
   }
 ];
@@ -41,6 +42,7 @@ export default function DestinationsSection() {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const [imagesLoaded, setImagesLoaded] = useState<{[key: string]: boolean}>({});
 
   const minSwipeDistance = 50;
 
@@ -125,6 +127,28 @@ export default function DestinationsSection() {
     };
   }, []);
 
+  // Preload visible and adjacent images
+  useEffect(() => {
+    const preloadImages = () => {
+      // Load current, next and previous images
+      const indexesToLoad = [
+        currentIndex,
+        (currentIndex + 1) % destinations.length,
+        (currentIndex - 1 + destinations.length) % destinations.length
+      ];
+      
+      indexesToLoad.forEach(index => {
+        const img = new Image();
+        img.src = destinations[index].image;
+        img.onload = () => {
+          setImagesLoaded(prev => ({...prev, [index]: true}));
+        };
+      });
+    };
+    
+    preloadImages();
+  }, [currentIndex]);
+
   return (
     <section className="section-padding bg-white" id="destinations">
       <div className="container-custom">
@@ -160,7 +184,7 @@ export default function DestinationsSection() {
               className={`flex transition-transform duration-500 ease-out ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {destinations.map((destination) => (
+              {destinations.map((destination, index) => (
                 <div 
                   key={destination.region}
                   className="w-full flex-shrink-0"
@@ -173,11 +197,18 @@ export default function DestinationsSection() {
                       viewport={{ once: true }}
                       className="group relative overflow-hidden rounded-2xl aspect-[4/3] mx-4"
                     >
+                      {/* Show a placeholder while image loads */}
+                      {!imagesLoaded[index] && (
+                        <div className="w-full h-full bg-gray-200 animate-pulse"></div>
+                      )}
                       <img 
                         src={destination.image} 
                         alt={destination.title}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         draggable="false"
+                        loading={Math.abs(index - currentIndex) <= 1 ? "eager" : "lazy"}
+                        onLoad={() => setImagesLoaded(prev => ({...prev, [index]: true}))}
+                        style={{opacity: imagesLoaded[index] ? 1 : 0}}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-black/0 p-6 flex flex-col justify-end">
                         <h3 className="text-2xl font-bold text-white mb-2">{destination.title}</h3>

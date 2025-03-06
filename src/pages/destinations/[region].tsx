@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import ServiceLayout from "@/components/layouts/ServiceLayout";
 import { motion } from "framer-motion";
 import { Plane, Hotel, FileText, Compass } from "lucide-react";
+import { useEffect } from 'react';
 
 const destinationData = {
   asia: {
@@ -68,15 +69,22 @@ const DestinationPage = () => {
   const { region } = useParams();
   const destination = destinationData[region as keyof typeof destinationData];
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [region]);
+
   if (!destination) {
     return <div>Destination not found</div>;
   }
+
+  // Add quality and size parameters to image URL
+  const optimizedBgImage = `${destination.bgImage}?auto=format&w=1920&q=75`;
 
   return (
     <ServiceLayout
       title={destination.title}
       description={destination.description}
-      bgImage={destination.bgImage}
+      bgImage={optimizedBgImage}
     >
       <div className="container-custom py-16">
         <div className="max-w-3xl mx-auto mb-16">

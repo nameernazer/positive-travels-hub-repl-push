@@ -6,38 +6,60 @@ import LoadingScreen from './LoadingScreen';
 import { Navigation } from './Navigation/Navigation';
 
 const images = [
-  "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e",
-  "https://images.unsplash.com/photo-1493997181344-712f2f19d87a",
-  "https://images.unsplash.com/photo-1514282401047-d79a71a590e8",
-  "https://images.unsplash.com/photo-1601823984263-b87b59798b00",
-  "https://images.unsplash.com/photo-1519677100203-a0e668c92439",
-  "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd",
-  "https://images.unsplash.com/photo-1467377791767-c929b5dc9a23",
-  "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f",
-  "https://images.unsplash.com/photo-1597998593641-5c27455adf87",
-  "https://images.unsplash.com/photo-1518684079-3c830dcef090",
+  "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&w=1920&q=80",
+  "https://images.unsplash.com/photo-1493997181344-712f2f19d87a?auto=format&w=1920&q=80",
+  "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&w=1920&q=80",
+  "https://images.unsplash.com/photo-1601823984263-b87b59798b00?auto=format&w=1920&q=80",
+  "https://images.unsplash.com/photo-1519677100203-a0e668c92439?auto=format&w=1920&q=80",
+  "https://images.unsplash.com/photo-1506197603052-3cc9c3a201bd?auto=format&w=1920&q=80",
+  "https://images.unsplash.com/photo-1467377791767-c929b5dc9a23?auto=format&w=1920&q=80",
+  "https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?auto=format&w=1920&q=80",
+  "https://images.unsplash.com/photo-1597998593641-5c27455adf87?auto=format&w=1920&q=80",
+  "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&w=1920&q=80",
 ];
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
   useEffect(() => {
-    Promise.all(
-      images.map(src => {
+    // Preload the first few images first
+    const imagesToPreloadFirst = images.slice(0, 3);
+    
+    // Create a promise for each initial image
+    const initialLoads = imagesToPreloadFirst.map(src => {
+      return new Promise<string>((resolve, reject) => {
         const img = new Image();
+        img.onload = () => resolve(src);
+        img.onerror = reject;
         img.src = src;
-        return new Promise((resolve, reject) => {
-          img.onload = resolve;
-          img.onerror = reject;
+      });
+    });
+    
+    // When the first few images are loaded, show the hero section
+    Promise.all(initialLoads)
+      .then(loadedSrcs => {
+        setLoadedImages(loadedSrcs);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
+        
+        // Continue loading the rest in the background
+        const remainingImages = images.slice(3);
+        remainingImages.forEach(src => {
+          const img = new Image();
+          img.onload = () => {
+            setLoadedImages(prev => [...prev, src]);
+          };
+          img.src = src;
         });
       })
-    ).then(() => {
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 1500);
-    });
+      .catch(err => {
+        console.error("Error preloading images:", err);
+        setIsLoading(false); // Show hero section anyway if there's an error
+      });
 
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
@@ -64,11 +86,13 @@ export default function HeroSection() {
           <motion.div
             key={img}
             initial={{ opacity: 0 }}
-            animate={{ opacity: index === currentImage ? 1 : 0 }}
+            animate={{ 
+              opacity: index === currentImage && loadedImages.includes(img) ? 1 : 0 
+            }}
             transition={{ duration: 1.5 }}
             className="absolute inset-0"
             style={{
-              backgroundImage: `url(${img})`,
+              backgroundImage: loadedImages.includes(img) ? `url(${img})` : 'none',
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}

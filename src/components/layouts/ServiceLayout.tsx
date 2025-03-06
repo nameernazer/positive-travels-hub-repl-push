@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { useState, useEffect } from "react";
 
 interface ServiceLayoutProps {
   children: React.ReactNode;
@@ -11,12 +12,29 @@ interface ServiceLayoutProps {
 }
 
 const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutProps) => {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
+  useEffect(() => {
+    // Preload the hero image
+    const img = new Image();
+    img.src = `${bgImage}?auto=format&w=1920&q=75`;
+    img.onload = () => setImageLoaded(true);
+    
+    window.scrollTo(0, 0);
+  }, [bgImage]);
+
   return (
     <div className="min-h-screen bg-white">
-      <div 
-        className="relative h-[50vh] bg-cover bg-center"
-        style={{ backgroundImage: `url(${bgImage})` }}
-      >
+      <div className="relative h-[50vh] bg-cover bg-center">
+        {/* Placeholder before image loads */}
+        <div className={`absolute inset-0 bg-gray-300 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}></div>
+        
+        {/* Background image */}
+        <div 
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ backgroundImage: `url(${bgImage}?auto=format&w=1920&q=75)` }}
+        ></div>
+        
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container-custom text-center text-white">
@@ -25,6 +43,7 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
                 src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
                 alt="Positive Travel Logo" 
                 className="h-16 mx-auto mb-8"
+                loading="eager"
               />
             </Link>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
