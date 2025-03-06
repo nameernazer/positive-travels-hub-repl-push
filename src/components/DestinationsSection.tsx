@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useState, useRef, useEffect } from 'react';
@@ -43,7 +42,6 @@ export default function DestinationsSection() {
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const sliderRef = useRef<HTMLDivElement>(null);
 
-  // Required minimum swipe distance in pixels
   const minSwipeDistance = 50;
 
   const nextSlide = () => {
@@ -54,18 +52,15 @@ export default function DestinationsSection() {
     setCurrentIndex((prev) => (prev - 1 + destinations.length) % destinations.length);
   };
 
-  // Handle touch start event
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  // Handle touch move event
   const onTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
-  // Handle touch end event
   const onTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
     
@@ -80,7 +75,6 @@ export default function DestinationsSection() {
     }
   };
 
-  // Handle mouse drag events for desktop
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [endX, setEndX] = useState(0);
@@ -116,7 +110,6 @@ export default function DestinationsSection() {
     setIsDragging(false);
   };
 
-  // Add keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
@@ -216,19 +209,6 @@ export default function DestinationsSection() {
           >
             <ChevronRight className="w-6 h-6" />
           </button>
-
-          <div className="flex justify-center mt-4 gap-2">
-            {destinations.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  index === currentIndex ? 'bg-primary' : 'bg-gray-300'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
         </div>
       </div>
     </section>

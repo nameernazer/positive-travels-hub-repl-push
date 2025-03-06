@@ -22,7 +22,7 @@ const features = [
 
 export default function VisionSection() {
   return (
-    <section className="section-padding bg-secondary/30" id="vision">
+    <section className="section-padding bg-white" id="vision">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
