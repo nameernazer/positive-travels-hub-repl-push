@@ -30,13 +30,9 @@ export const Navigation = ({ isMenuOpen, setIsMenuOpen }: NavigationProps) => {
     <div className="absolute top-0 left-0 right-0 z-30 bg-transparent">
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
-          <Link to="/" className="w-1/3">
-            <img 
-              src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
-              alt="Positive Travel Logo" 
-              className="h-10 md:h-16 w-auto"
-            />
-          </Link>
+          <div className="w-1/3 invisible">
+            {/* Invisible placeholder for logo (now moved outside this component) */}
+          </div>
 
           <div className="hidden md:flex justify-center items-center w-1/3">
             <span className="text-white text-lg">

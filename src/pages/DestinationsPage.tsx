@@ -71,18 +71,18 @@ const DestinationsPage = () => {
         
         <div className="absolute inset-0 bg-black/50" />
         
-        {/* Logo in top-right corner */}
-        <div className="absolute top-6 right-6 z-10">
+        {/* Logo in top-left corner */}
+        <div className="absolute top-6 left-6 z-10">
           <Link to="/">
             {!logoLoaded && (
-              <div className="h-10 w-32 bg-gray-500/20 animate-pulse rounded"></div>
+              <div className="h-14 w-40 bg-gray-500/20 animate-pulse rounded"></div>
             )}
             <img 
               src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
               alt="Positive Travel Logo" 
-              className={`h-10 w-auto transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
-              width="128" 
-              height="40"
+              className={`h-14 w-auto transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
+              width="160" 
+              height="56"
               onLoad={() => setLogoLoaded(true)}
             />
           </Link>
