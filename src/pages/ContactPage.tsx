@@ -18,7 +18,7 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <div className="relative h-48 bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/589da510-40a1-42fc-b6cc-1d64181eafdb.png')" }}>
+      <div className="relative h-[50vh] bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/589da510-40a1-42fc-b6cc-1d64181eafdb.png')" }}>
         <div className="absolute inset-0 bg-black/50" />
         
         {/* Logo in top-left corner - adjusted position */}
@@ -38,12 +38,14 @@ const ContactPage = () => {
           </Link>
         </div>
         
-        {/* Centered title with support text - updated layout */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
-          <h1 className="text-4xl font-bold text-white mb-2">Reach out to us!</h1>
-          <p className="text-white text-center text-sm md:text-base max-w-lg opacity-90">
-            Our dedicated team provides 24/7 support to ensure your journey is seamless from start to finish.
-          </p>
+        {/* Centered title with support text - matched with FlightBookingsPage */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="container-custom text-center text-white">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Reach out to us!</h1>
+            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+              Our dedicated team provides 24/7 support to ensure your journey is seamless from start to finish.
+            </p>
+          </div>
         </div>
       </div>
 
