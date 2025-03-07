@@ -1,44 +1,27 @@
-
 import { motion } from 'framer-motion';
 import { Phone, Mail, MessageCircle, MapPin, Facebook, Instagram, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import MainLayout from '@/components/layouts/MainLayout';
 
 const ContactPage = () => {
-  const [logoLoaded, setLogoLoaded] = useState(false);
+  const [heroImageLoaded, setHeroImageLoaded] = useState(false);
   
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    // Preload logo
-    const logo = new Image();
-    logo.src = "/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png";
-    logo.onload = () => setLogoLoaded(true);
+    // Preload hero image
+    const heroImg = new Image();
+    heroImg.src = "/lovable-uploads/589da510-40a1-42fc-b6cc-1d64181eafdb.png";
+    heroImg.onload = () => setHeroImageLoaded(true);
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="relative h-[50vh] bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/589da510-40a1-42fc-b6cc-1d64181eafdb.png')" }}>
+    <MainLayout>
+      <div className="relative h-[50vh] bg-cover bg-center mt-24" style={{ backgroundImage: "url('/lovable-uploads/589da510-40a1-42fc-b6cc-1d64181eafdb.png')" }}>
         <div className="absolute inset-0 bg-black/50" />
         
-        {/* Logo in top-left corner - adjusted position */}
-        <div className="absolute top-4 left-6 z-10">
-          <Link to="/">
-            {!logoLoaded && (
-              <div className="h-16 w-44 bg-gray-500/20 animate-pulse rounded"></div>
-            )}
-            <img 
-              src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
-              alt="Positive Travel Logo" 
-              className={`h-16 w-auto transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
-              width="180" 
-              height="64"
-              onLoad={() => setLogoLoaded(true)}
-            />
-          </Link>
-        </div>
-        
-        {/* Centered title with support text - matched with FlightBookingsPage */}
+        {/* Centered title with support text */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container-custom text-center text-white">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Reach out to us!</h1>
@@ -154,7 +137,7 @@ const ContactPage = () => {
           Back to Home Page
         </Link>
       </div>
-    </div>
+    </MainLayout>
   );
 };
 

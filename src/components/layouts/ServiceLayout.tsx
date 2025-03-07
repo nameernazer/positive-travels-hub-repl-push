@@ -1,8 +1,9 @@
 
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import MainLayout from "./MainLayout";
 
 interface ServiceLayoutProps {
   children: React.ReactNode;
@@ -13,7 +14,6 @@ interface ServiceLayoutProps {
 
 const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
-  const [logoLoaded, setLogoLoaded] = useState(false);
   
   useEffect(() => {
     // Preload the hero image
@@ -21,17 +21,12 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
     img.src = `${bgImage}?auto=format&w=1200&q=60`;
     img.onload = () => setImageLoaded(true);
     
-    // Preload the logo
-    const logo = new Image();
-    logo.src = "/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png";
-    logo.onload = () => setLogoLoaded(true);
-    
     window.scrollTo(0, 0);
   }, [bgImage]);
 
   return (
-    <div className="min-h-screen bg-white">
-      <div className="relative h-[50vh] bg-cover bg-center">
+    <MainLayout>
+      <div className="relative h-[50vh] bg-cover bg-center mt-24"> {/* Added margin-top to account for navigation */}
         {/* Placeholder before image loads */}
         <div className={`absolute inset-0 bg-gray-300 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}></div>
         
@@ -42,23 +37,6 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
         ></div>
         
         <div className="absolute inset-0 bg-black/50" />
-        
-        {/* Logo in top-left corner */}
-        <div className="absolute top-6 left-6 z-10">
-          <Link to="/">
-            {!logoLoaded && (
-              <div className="h-14 w-40 bg-gray-500/20 animate-pulse rounded"></div>
-            )}
-            <img 
-              src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
-              alt="Positive Travel Logo" 
-              className={`h-14 w-auto transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
-              width="160" 
-              height="56"
-              onLoad={() => setLogoLoaded(true)}
-            />
-          </Link>
-        </div>
         
         {/* Centered title */}
         <div className="absolute inset-0 flex items-center justify-center">
@@ -88,7 +66,7 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
           </Link>
         </motion.div>
       </div>
-    </div>
+    </MainLayout>
   );
 };
 
