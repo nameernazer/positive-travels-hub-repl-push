@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Phone, Mail, MessageCircle, MapPin, Facebook, Instagram, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -21,26 +20,26 @@ const ContactPage = () => {
       <div className="relative h-48 bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/589da510-40a1-42fc-b6cc-1d64181eafdb.png')" }}>
         <div className="absolute inset-0 bg-black/50" />
         
-        {/* Logo in top-left corner */}
-        <div className="absolute top-6 left-6 z-10">
+        {/* Logo in top-left corner - adjusted position */}
+        <div className="absolute top-4 left-6 z-10">
           <Link to="/">
             {!logoLoaded && (
-              <div className="h-14 w-40 bg-gray-500/20 animate-pulse rounded"></div>
+              <div className="h-16 w-44 bg-gray-500/20 animate-pulse rounded"></div>
             )}
             <img 
               src="/lovable-uploads/83c68e77-3dd0-4763-a625-9071182b3664.png" 
               alt="Positive Travel Logo" 
-              className={`h-14 w-auto transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
-              width="160" 
-              height="56"
+              className={`h-16 w-auto transition-opacity duration-300 ${logoLoaded ? 'opacity-100' : 'opacity-0'}`}
+              width="180" 
+              height="64"
               onLoad={() => setLogoLoaded(true)}
             />
           </Link>
         </div>
         
-        {/* Centered title */}
+        {/* Centered title - updated text */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-white">Contact Us</h1>
+          <h1 className="text-4xl font-bold text-white">Reach out to us!</h1>
         </div>
       </div>
 
@@ -51,10 +50,9 @@ const ContactPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Reach out to us!</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">We're here for you</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We're here to make your travel dreams a reality. Our dedicated team provides 24/7 support 
-            to ensure your journey is seamless from start to finish.
+            Our dedicated team provides 24/7 support to ensure your journey is seamless from start to finish.
           </p>
         </motion.div>
 
