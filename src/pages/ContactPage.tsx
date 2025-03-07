@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { Phone, Mail, MessageCircle, MapPin, Facebook, Instagram, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -37,9 +38,12 @@ const ContactPage = () => {
           </Link>
         </div>
         
-        {/* Centered title - updated text */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h1 className="text-4xl font-bold text-white">Reach out to us!</h1>
+        {/* Centered title with support text - updated layout */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4">
+          <h1 className="text-4xl font-bold text-white mb-2">Reach out to us!</h1>
+          <p className="text-white text-center text-sm md:text-base max-w-lg opacity-90">
+            Our dedicated team provides 24/7 support to ensure your journey is seamless from start to finish.
+          </p>
         </div>
       </div>
 
@@ -50,10 +54,7 @@ const ContactPage = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">We're here for you</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Our dedicated team provides 24/7 support to ensure your journey is seamless from start to finish.
-          </p>
+          {/* Removed "We're here for you" heading */}
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
