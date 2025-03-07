@@ -1,5 +1,6 @@
+
 import { motion } from 'framer-motion';
-import { Phone, Mail, MessageCircle, MapPin, Facebook, Instagram, ArrowLeft } from 'lucide-react';
+import { Phone, Mail, MessageCircle, MapPin, Facebook, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import MainLayout from '@/components/layouts/MainLayout';
@@ -18,7 +19,7 @@ const ContactPage = () => {
 
   return (
     <MainLayout>
-      <div className="relative h-[50vh] bg-cover bg-center mt-24" style={{ backgroundImage: "url('/lovable-uploads/589da510-40a1-42fc-b6cc-1d64181eafdb.png')" }}>
+      <div className="relative h-[50vh] bg-cover bg-center" style={{ backgroundImage: "url('/lovable-uploads/589da510-40a1-42fc-b6cc-1d64181eafdb.png')" }}>
         <div className="absolute inset-0 bg-black/50" />
         
         {/* Centered title with support text */}
@@ -33,15 +34,6 @@ const ContactPage = () => {
       </div>
 
       <div className="container-custom py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          {/* Removed "We're here for you" heading */}
-        </motion.div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           <motion.a
             href="tel:+919497458282"
@@ -126,16 +118,6 @@ const ContactPage = () => {
             <p className="text-muted-foreground">@positivetravelandholidays</p>
           </motion.a>
         </div>
-      </div>
-
-      <div className="container-custom pb-16">
-        <Link 
-          to="/" 
-          className="inline-flex items-center justify-center w-full sm:w-auto gap-2 bg-primary text-white px-24 py-4 rounded-full font-medium text-lg hover:bg-primary/90 transition-colors"
-        >
-          <ArrowLeft className="w-5 h-5" />
-          Back to Home Page
-        </Link>
       </div>
     </MainLayout>
   );

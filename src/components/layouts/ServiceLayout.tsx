@@ -26,7 +26,7 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
 
   return (
     <MainLayout>
-      <div className="relative h-[50vh] bg-cover bg-center mt-24"> {/* Added margin-top to account for navigation */}
+      <div className="relative h-[50vh] bg-cover bg-center">
         {/* Placeholder before image loads */}
         <div className={`absolute inset-0 bg-gray-300 ${imageLoaded ? 'opacity-0' : 'opacity-100'} transition-opacity duration-500`}></div>
         

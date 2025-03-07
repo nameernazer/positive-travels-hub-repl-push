@@ -1,14 +1,13 @@
 
 import { useState } from 'react';
-import { Navigation } from '../Navigation/Navigation';
 import { Link } from 'react-router-dom';
+import { ArrowLeft } from 'lucide-react';
 
 interface MainLayoutProps {
   children: React.ReactNode;
 }
 
 export const MainLayout = ({ children }: MainLayoutProps) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoLoaded, setLogoLoaded] = useState(false);
 
   return (
@@ -30,9 +29,18 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
         </Link>
       </div>
       
-      <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      
       {children}
+
+      {/* Back button with padding */}
+      <div className="container-custom pb-16 pt-16">
+        <Link 
+          to="/" 
+          className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition-colors"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          Back to Home
+        </Link>
+      </div>
     </div>
   );
 };
