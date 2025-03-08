@@ -71,8 +71,8 @@ export const Navigation = ({ isMenuOpen, setIsMenuOpen }: NavigationProps) => {
           </div>
         </div>
 
-        {/* Increased top margin to create more space between logo and nav */}
-        <div className="mt-12">
+        {/* Reduced top margin to create less space between logo and nav */}
+        <div className="mt-6">
           <div className="h-px bg-white/20 my-4" />
 
           <div className="hidden md:flex items-center space-x-12 py-2 justify-start">
