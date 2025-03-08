@@ -35,7 +35,7 @@ export const Navigation = ({ isMenuOpen, setIsMenuOpen }: NavigationProps) => {
           <div className="w-1/4"></div>
 
           <div className="hidden md:flex justify-center items-center w-1/3">
-            <span className="text-white text-lg">
+            <span className="text-white text-lg text-center">
               Make a call: +91 94974 58282
             </span>
           </div>
