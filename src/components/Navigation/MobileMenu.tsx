@@ -56,6 +56,7 @@ export const MobileMenu = ({ isMenuOpen, setIsMenuOpen }: MobileMenuProps) => {
     { label: 'Services', path: '#services', icon: Settings },
     { label: 'Our Vision', path: '#vision', icon: Target },
     { label: 'Destinations', path: '#destinations', icon: MapPin }
+    // Removed Contact option as requested
   ];
 
   return (

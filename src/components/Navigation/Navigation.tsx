@@ -29,9 +29,10 @@ export const Navigation = ({ isMenuOpen, setIsMenuOpen }: NavigationProps) => {
   return (
     <div className="absolute top-0 left-0 right-0 z-30 bg-transparent">
       <div className="container-custom">
-        <div className="flex items-center justify-between py-4">
-          {/* Removed invisible placeholder since logo is now in MainLayout */}
-          <div className="w-1/3"></div>
+        {/* Added mt-6 to move this section down a bit */}
+        <div className="flex items-center justify-between py-4 mt-6">
+          {/* Wider spacing on the left */}
+          <div className="w-1/4"></div>
 
           <div className="hidden md:flex justify-center items-center w-1/3">
             <span className="text-white text-lg">
@@ -70,8 +71,8 @@ export const Navigation = ({ isMenuOpen, setIsMenuOpen }: NavigationProps) => {
           </div>
         </div>
 
-        {/* Added margin-top to move only the horizontal bar and nav links down */}
-        <div className="mt-8">
+        {/* Increased top margin to create more space between logo and nav */}
+        <div className="mt-12">
           <div className="h-px bg-white/20 my-4" />
 
           <div className="hidden md:flex items-center space-x-12 py-2 justify-start">
