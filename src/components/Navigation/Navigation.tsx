@@ -27,7 +27,7 @@ export const Navigation = ({ isMenuOpen, setIsMenuOpen }: NavigationProps) => {
   };
 
   return (
-    <div className="absolute top-0 left-0 right-0 z-30 bg-transparent">
+    <div className="absolute top-0 left-0 right-0 z-30 bg-transparent mt-24">
       <div className="container-custom">
         <div className="flex items-center justify-between py-4">
           {/* Removed invisible placeholder since logo is now in MainLayout */}
@@ -72,11 +72,11 @@ export const Navigation = ({ isMenuOpen, setIsMenuOpen }: NavigationProps) => {
 
         <div className="h-px bg-white/20 my-4" />
 
-        <div className="hidden md:flex items-center space-x-8 py-2">
+        <div className="hidden md:flex items-center space-x-12 py-2 justify-start">
           <Link to="/" className="text-white hover:text-white/80 transition-colors">Home</Link>
-          <button onClick={() => scrollToSection('destinations')} className="text-white hover:text-white/80 transition-colors">Destinations</button>
           <button onClick={() => scrollToSection('about')} className="text-white hover:text-white/80 transition-colors">About Us</button>
           <button onClick={() => scrollToSection('services')} className="text-white hover:text-white/80 transition-colors">Services</button>
+          <button onClick={() => scrollToSection('destinations')} className="text-white hover:text-white/80 transition-colors">Destinations</button>
           <Link to="/contact" className="text-white hover:text-white/80 transition-colors">Contact Us</Link>
         </div>
       </div>
