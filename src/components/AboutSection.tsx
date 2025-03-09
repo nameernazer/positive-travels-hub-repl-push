@@ -27,13 +27,19 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="flex flex-col items-center md:w-1/3"
           >
-            <div className="rounded-2xl overflow-hidden shadow-lg bg-white p-3 max-w-[300px]">
+            <div className="rounded-2xl overflow-hidden max-w-[280px]">
               <img 
                 src="/lovable-uploads/055ed8a5-e784-4b75-a8f7-78a3c59c7b54.png" 
                 alt="Nazer EP - Founder" 
                 className="w-full aspect-square object-cover rounded-xl"
+                loading="eager"
+                width="280"
+                height="280"
               />
-              <p className="text-center mt-3 text-[#8E9196] font-medium">Founder</p>
+              <div className="text-center mt-3 pb-2">
+                <p className="font-semibold text-gray-800">Nazer EP</p>
+                <p className="text-[#8E9196] font-medium">Founder</p>
+              </div>
             </div>
           </motion.div>
           

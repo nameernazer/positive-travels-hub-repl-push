@@ -31,11 +31,11 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
       
       {children}
 
-      {/* Back button with padding */}
+      {/* Back button with padding - changed color to green to match "Start Your Journey" */}
       <div className="container-custom pb-16 pt-16">
         <Link 
           to="/" 
-          className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-full hover:bg-green-600 transition-colors"
+          className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-full hover:bg-primary/90 transition-colors"
         >
           <ArrowLeft className="w-5 h-5" />
           Back to Home

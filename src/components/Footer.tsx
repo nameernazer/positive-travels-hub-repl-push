@@ -12,7 +12,7 @@ const socialInfo = [
   {
     icon: Instagram,
     title: "Follow Us",
-    content: "@positivetravelandholidays",
+    content: "positivetravelandholidays",
     action: "View Profile",
     href: "https://www.instagram.com/positivetravelandholidays"
   },

@@ -115,7 +115,7 @@ const ContactPage = () => {
           >
             <Instagram className="w-12 h-12 text-primary mx-auto mb-4" />
             <h3 className="text-xl font-semibold mb-2">Instagram</h3>
-            <p className="text-muted-foreground">@positivetravelandholidays</p>
+            <p className="text-muted-foreground">positivetravelandholidays</p>
           </motion.a>
         </div>
       </div>
