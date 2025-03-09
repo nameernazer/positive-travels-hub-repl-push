@@ -38,7 +38,7 @@ export default function AboutSection() {
                   width="280"
                   height="280"
                   decoding="async"
-                  fetchpriority="high"
+                  fetchPriority="high"
                 />
               </picture>
               <div className="text-center mt-3 pb-2">
