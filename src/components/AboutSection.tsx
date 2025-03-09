@@ -18,64 +18,62 @@ export default function AboutSection() {
           </h2>
         </motion.div>
 
-        <div className="flex flex-col sm:flex-row gap-6 md:gap-12">
-          {/* Founder's Photo - Fixed for mobile side-by-side layout */}
+        {/* Changed flex-col to flex-row on all screen sizes with adjusted widths for mobile */}
+        <div className="flex flex-row gap-4 md:gap-12">
+          {/* Founder's Photo - Updated for side-by-side layout even on mobile */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="sm:w-1/3 md:w-1/4 flex justify-center sm:justify-start"
+            className="w-1/3 md:w-1/4 flex justify-center"
           >
-            <div className="max-w-[200px] sm:max-w-[220px] md:max-w-[280px]">
-              <picture>
-                <source srcSet="/lovable-uploads/055ed8a5-e784-4b75-a8f7-78a3c59c7b54.webp" type="image/webp" />
-                <img 
-                  src="/lovable-uploads/055ed8a5-e784-4b75-a8f7-78a3c59c7b54.png" 
-                  alt="Nazer EP - Founder" 
-                  className="w-full aspect-square object-cover rounded-xl"
-                  loading="eager"
-                  width="280"
-                  height="280"
-                  decoding="async"
-                  fetchPriority="high"
-                />
-              </picture>
-              <div className="text-center mt-3 pb-2">
-                <p className="font-semibold text-gray-800">Nazer EP</p>
-                <p className="text-[#8E9196] font-medium">Founder</p>
+            <div className="w-full max-w-[120px] xs:max-w-[150px] sm:max-w-[220px] md:max-w-[280px]">
+              <img 
+                src="/lovable-uploads/03a67081-0275-4f88-94b6-ecab70c60bd8.png" 
+                alt="Nazer EP - Founder" 
+                className="w-full aspect-square object-cover rounded-xl"
+                loading="eager"
+                width="280"
+                height="280"
+                decoding="async"
+                fetchPriority="high"
+              />
+              <div className="text-center mt-2 md:mt-3 pb-2">
+                <p className="font-semibold text-gray-800 text-sm sm:text-base">Nazer EP</p>
+                <p className="text-[#8E9196] font-medium text-xs sm:text-sm">Founder</p>
               </div>
             </div>
           </motion.div>
           
-          {/* About Text - Ensured side-by-side layout on all screens */}
+          {/* About Text - Adjusted for side-by-side layout on all screens */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="sm:w-2/3 md:w-3/4"
+            className="w-2/3 md:w-3/4"
           >
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4">Welcome to Positive Travel and Holidays</h3>
-            <p className="text-muted-foreground mb-6 text-sm sm:text-base">
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2 md:mb-4">Welcome to Positive Travel and Holidays</h3>
+            <p className="text-muted-foreground mb-3 md:mb-6 text-xs sm:text-sm md:text-base">
               Under the visionary leadership of Mr. Nazer EP, Positive Travel and Holidays has emerged as a trusted name in the travel industry. With years of experience and deep industry knowledge, Mr. Nazer EP has built a company dedicated to creating exceptional travel experiences.
             </p>
-            <p className="text-muted-foreground mb-8 text-sm sm:text-base">
+            <p className="text-muted-foreground mb-4 md:mb-8 text-xs sm:text-sm md:text-base">
               Our success is built on our commitment to excellence and our dedicated 24/7 support team, ensuring that our customers receive seamless assistance whenever they need it. We take pride in turning travel dreams into reality with personalized service and attention to detail.
             </p>
             
-            {/* Mission and Support sections moved below */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-              <div className="bg-secondary/30 p-6 rounded-lg">
-                <h4 className="text-xl font-semibold mb-2">Our Mission</h4>
-                <p className="text-muted-foreground text-sm sm:text-base">
+            {/* Mission and Support sections - Adjusted for responsiveness */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mt-2 md:mt-4">
+              <div className="bg-secondary/30 p-3 md:p-6 rounded-lg">
+                <h4 className="text-sm md:text-xl font-semibold mb-1 md:mb-2">Our Mission</h4>
+                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
                   To provide extraordinary travel experiences while ensuring customer satisfaction through our 24/7 dedicated support and personalized service.
                 </p>
               </div>
               
-              <div className="bg-secondary/30 p-6 rounded-lg">
-                <h4 className="text-xl font-semibold mb-2">24/7 Support</h4>
-                <p className="text-muted-foreground text-sm sm:text-base">
+              <div className="bg-secondary/30 p-3 md:p-6 rounded-lg">
+                <h4 className="text-sm md:text-xl font-semibold mb-1 md:mb-2">24/7 Support</h4>
+                <p className="text-muted-foreground text-xs sm:text-sm md:text-base">
                   Our team is available round the clock to assist you with any queries or support you need during your journey.
                 </p>
               </div>
