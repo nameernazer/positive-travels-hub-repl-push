@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 
 export default function AboutSection() {
@@ -18,7 +19,7 @@ export default function AboutSection() {
         </motion.div>
 
         <div className="flex flex-col sm:flex-row gap-6 md:gap-12">
-          {/* Founder's Photo - Reduced size on mobile with flex-row to keep side by side */}
+          {/* Founder's Photo - Fixed for mobile side-by-side layout */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -37,7 +38,7 @@ export default function AboutSection() {
                   width="280"
                   height="280"
                   decoding="async"
-                  fetchPriority="high"
+                  fetchpriority="high"
                 />
               </picture>
               <div className="text-center mt-3 pb-2">
@@ -47,7 +48,7 @@ export default function AboutSection() {
             </div>
           </motion.div>
           
-          {/* About Text - Adjusted for mobile side-by-side layout */}
+          {/* About Text - Ensured side-by-side layout on all screens */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
