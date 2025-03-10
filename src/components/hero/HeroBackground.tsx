@@ -11,6 +11,11 @@ interface HeroBackgroundProps {
 const HeroBackground = ({ images, currentImage, loadedImages }: HeroBackgroundProps) => {
   return (
     <>
+      {/* Show a loading placeholder while images are loading */}
+      {loadedImages.length === 0 && (
+        <div className="absolute inset-0 bg-gray-300 animate-pulse"></div>
+      )}
+      
       {images.map((img, index) => (
         <motion.div
           key={img}

@@ -18,7 +18,7 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
   useEffect(() => {
     // Preload the hero image
     const img = new Image();
-    img.src = `${bgImage}?auto=format&w=1200&q=60`;
+    img.src = `${bgImage}?auto=format&w=1200&q=75`;
     img.onload = () => setImageLoaded(true);
     
     window.scrollTo(0, 0);
@@ -33,7 +33,7 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
         {/* Background image - using optimized version */}
         <div 
           className={`absolute inset-0 bg-cover bg-center transition-opacity duration-500 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
-          style={{ backgroundImage: `url(${bgImage}?auto=format&w=1200&q=60)` }}
+          style={{ backgroundImage: `url(${bgImage}?auto=format&w=1200&q=75)` }}
         ></div>
         
         <div className="absolute inset-0 bg-black/50" />
