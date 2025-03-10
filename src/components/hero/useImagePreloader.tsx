@@ -6,15 +6,15 @@ export const useImagePreloader = (images: string[]) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Start with a shorter loading time
+    // Start with a shorter loading time for better perceived performance
     const initialLoadingTimeout = setTimeout(() => {
       setIsLoading(false);
-    }, 500);
+    }, 400);
     
-    // Preload the first few images first
-    const imagesToPreloadFirst = images.slice(0, 2);
+    // Prioritize loading the first three images
+    const imagesToPreloadFirst = images.slice(0, 3);
     
-    // Create a promise for each initial image
+    // Create a promise for each initial image with optimized parameters
     const initialLoads = imagesToPreloadFirst.map(src => {
       return new Promise<string>((resolve, reject) => {
         const img = new Image();
@@ -23,7 +23,8 @@ export const useImagePreloader = (images: string[]) => {
           console.error(`Failed to load image: ${src}`);
           reject(`Failed to load image: ${src}`);
         };
-        img.src = src;
+        // Add fit=crop for better performance with consistent dimensions
+        img.src = `${src}&fit=crop`;
       });
     });
     
@@ -34,14 +35,15 @@ export const useImagePreloader = (images: string[]) => {
         clearTimeout(initialLoadingTimeout);
         setIsLoading(false);
         
-        // Continue loading the rest in the background
-        const remainingImages = images.slice(2);
+        // Continue loading the rest in the background with lower priority
+        const remainingImages = images.slice(3);
         remainingImages.forEach(src => {
           const img = new Image();
           img.onload = () => {
             setLoadedImages(prev => [...prev, src]);
           };
-          img.src = src;
+          // Add fit=crop for better performance with consistent dimensions
+          img.src = `${src}&fit=crop`;
         });
       })
       .catch(err => {
