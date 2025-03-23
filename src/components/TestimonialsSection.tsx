@@ -31,7 +31,7 @@ export default function TestimonialsSection() {
           className="text-center mb-16 "
         >
           <span className="text-primary font-alternate text-5xl uppercase tracking-wider">Testimonials</span>
-          <h2 className="mt-7 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight">
+          <h2 className="mt-10 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight">
             What Our Clients Say
           </h2>
         </motion.div>

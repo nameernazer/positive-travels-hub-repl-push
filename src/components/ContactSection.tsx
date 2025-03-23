@@ -38,7 +38,7 @@ export default function ContactSection() {
           className="text-center mb-16"
         >
           <span className="text-primary font-alternate uppercase tracking-wider text-5xl">Contact Us</span>
-          <h2 className="mt-7 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight">
+          <h2 className="mt-10 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight">
             Let's Plan Your Next Adventure
           </h2>
           <p className="mt-5 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon text-xl">
