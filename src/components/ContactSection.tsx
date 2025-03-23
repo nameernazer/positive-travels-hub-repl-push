@@ -37,11 +37,11 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium uppercase tracking-wider">Contact Us</span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
+          <span className="text-primary font-alternate uppercase tracking-wider text-5xl">Contact Us</span>
+          <h2 className="mt-7 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight">
             Let's Plan Your Next Adventure
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="mt-5 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon text-xl">
             Ready to start your journey? Reach out to us through any of these channels
             and we'll be happy to help you plan your perfect trip.
           </p>

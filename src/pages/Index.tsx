@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
+import PartnersSection from "@/components/PartnersSection";
 
 const Index = () => {
   return (
@@ -15,10 +16,11 @@ const Index = () => {
       <LoadingScreen />
       <main className="min-h-screen bg-white">
         <HeroSection />
-        <AboutSection />
-        <VisionSection />
         <ServicesSection />
         <DestinationsSection />
+        <VisionSection />
+        <PartnersSection />
+        <AboutSection /> 
         <TestimonialsSection />
         <ContactSection />
         <Footer />

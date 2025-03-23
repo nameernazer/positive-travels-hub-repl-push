@@ -41,11 +41,30 @@ export default function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium uppercase tracking-wider">Our Services</span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
+
+          <span className="text-black font-bold font-brandonBold uppercase tracking-wider text-5xl">THE LUXURY TRAVEL EXPERTS</span>
+
+          <p className="font-brandon mt-10 mb-20 text-muted-foreground max-w-2xl mx-auto text-lg">
+            The world is vast, full of wonders. But information engulfs us. See this, do that, don’t miss this. It seems the more choice there is, the more overwhelmed we feel. What’s more, you’re never asked how you want to feel. In fact, you’re rarely asked anything. That’s not us. We are people. People who value human connection and thrive on connecting you to our vast world. A company of people renowned for planning remarkable and luxurious travel experiences.
+
+            
+          </p>
+
+          <p className= "mb-20 font-brandon text-muted-foreground max-w-2xl mx-auto text-2xl"> So let’s begin. Let’s do something remarkable.</p>
+
+          
+
+          <p className="mt-20 mb-20 text-primary font-alternate uppercase tracking-wider text-5xl">‎                                                                                                                                                                                                                         </p> {/* This is for spacing */}
+        
+          
+          <span className="mt-20 mb-20 text-primary font-alternate uppercase tracking-wider text-5xl">Our Services</span>
+
+          
+          
+          <h2 className="mt-10 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight font-bold">
             Comprehensive Travel Solutions
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon">
             We offer a complete range of travel services to make your journey seamless and memorable.
           </p>
         </motion.div>

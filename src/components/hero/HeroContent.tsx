@@ -25,7 +25,7 @@ const HeroContent = ({ scrollToSection }: HeroContentProps) => {
           </p>
           
           <motion.button 
-            onClick={() => scrollToSection('about')}
+            onClick={() => scrollToSection('services')}
             className="mt-8 px-8 py-4 bg-primary text-white rounded-full font-medium flex items-center gap-2 mx-auto hover:bg-primary/90 transition-colors text-lg"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

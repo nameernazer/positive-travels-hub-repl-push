@@ -31,11 +31,15 @@ export default function VisionSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-medium uppercase tracking-wider">Our Vision</span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
+          <span className="font-alternate text-primary font-medium uppercase tracking-wider text-5xl">
+            Our Vision
+          </span>
+
+
+          <h2 className="mt-10 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight">
             Creating Memories That Last a Lifetime
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon">
             At Positive Travel and Holidays, we believe in transforming your travel dreams into reality
             through exceptional service and attention to detail.
           </p>

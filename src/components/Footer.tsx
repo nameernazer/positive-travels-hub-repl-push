@@ -50,31 +50,31 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white font-brandon text-lg tracking-wider">
       <div className="container-custom py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">About Us</h3>
-            <p className="text-gray-400">
+            <h3 className="text-2xl font-brandonBold mb-4 uppercase tracking-wider">About Us</h3>
+            <p className="text-gray-400 font-brandon text-xl tracking-wider ">
               Positive Travel and Holidays is dedicated to creating unforgettable travel experiences 
               for our clients. We specialize in personalized travel solutions and exceptional service.
             </p>
           </div>
           
           <div>
-            <h3 className="text-2xl font-bold mb-4">Quick Links</h3>
+            <h3 className="text-2xl font-bold mb-4 uppercase font-brandonBold tracking-wider">Quick Links</h3>
             <ul className="space-y-2">
-              <li><button onClick={() => scrollToSection('hero')} className="text-gray-400 hover:text-white transition-colors">Home</button></li>
-              <li><button onClick={() => scrollToSection('about')} className="text-gray-400 hover:text-white transition-colors">About Us</button></li>
-              <li><button onClick={() => scrollToSection('vision')} className="text-gray-400 hover:text-white transition-colors">Our Vision</button></li>
-              <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition-colors">Services</button></li>
-              <li><button onClick={() => scrollToSection('destinations')} className="text-gray-400 hover:text-white transition-colors">Destinations</button></li>
-              <li><button onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-white transition-colors">Contact</button></li>
+              <li><button onClick={() => scrollToSection('hero')} className="text-gray-400 hover:text-white transition-colors font-brandon tracking-wider text-lg">Home</button></li>
+              <li><button onClick={() => scrollToSection('about')} className="text-gray-400 hover:text-white transition-colors font-brandon tracking-wider text-lg">About Us</button></li>
+              <li><button onClick={() => scrollToSection('vision')} className="text-gray-400 hover:text-white transition-colors font-brandon tracking-wider text-lg">Our Vision</button></li>
+              <li><button onClick={() => scrollToSection('services')} className="text-gray-400 hover:text-white transition-colors font-brandon tracking-wider text-lg">Services</button></li>
+              <li><button onClick={() => scrollToSection('destinations')} className="text-gray-400 hover:text-white transition-colors font-brandon tracking-wider text-lg">Destinations</button></li>
+              <li><button onClick={() => scrollToSection('contact')} className="text-gray-400 hover:text-white transition-colors text-lg font-brandon tracking-wider">Contact</button></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="text-2xl font-bold mb-4">Get In Touch</h3>
+            <h3 className="text-2xl font-brandonBold mb-4 uppercase tracking-wider">Get In Touch</h3>
             <div className="space-y-4">
               {socialInfo.map((item) => (
                 <a
@@ -102,7 +102,7 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400">
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center text-gray-400 font-brandonBold uppercase text-lg tracking-wider">
           <p>&copy; {new Date().getFullYear()} Positive Travel and Holidays. All rights reserved.</p>
         </div>
       </div>

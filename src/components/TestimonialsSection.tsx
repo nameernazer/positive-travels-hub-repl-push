@@ -28,10 +28,10 @@ export default function TestimonialsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-16 "
         >
-          <span className="text-primary font-medium uppercase tracking-wider">Testimonials</span>
-          <h2 className="mt-4 text-4xl md:text-5xl font-bold tracking-tight">
+          <span className="text-primary font-alternate text-5xl uppercase tracking-wider">Testimonials</span>
+          <h2 className="mt-7 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight">
             What Our Clients Say
           </h2>
         </motion.div>

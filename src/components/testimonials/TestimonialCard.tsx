@@ -19,12 +19,12 @@ export default function TestimonialCard({ testimonial, currentIndex }: Testimoni
       className="text-center"
     >
       <Quote className="w-12 h-12 text-primary/20 mx-auto mb-6" />
-      <p className="text-xl md:text-2xl font-medium mb-6">
+      <p className="text-lg md:text-1xl font-brandonBold uppercase mb-6 text-[#52575c]">
         {testimonial.quote}
       </p>
       <div className="space-y-2">
-        <p className="font-semibold">{testimonial.author}</p>
-        <p className="text-muted-foreground">{testimonial.location}</p>
+        <p className="font-semibold uppercase text-xl">{testimonial.author}</p>
+        <p className="text-muted-foreground uppercase text-1xl">{testimonial.location}</p>
       </div>
     </motion.div>
   );

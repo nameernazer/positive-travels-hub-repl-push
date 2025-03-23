@@ -87,3 +87,25 @@
   transform: translateY(-5px);
   opacity: 0.95;
 }
+
+
+@font-face {
+  font-family: "AlternateGotNo1D";
+  src: url("https://4ea69241-424c-47a1-9592-1d3bba5e218b-00-3f2ubmmq5d0g4.pike.repl.co/fonts/AlternateGotNo1D.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BrandonGrotesque";
+  src: url("/fonts/BrandonGrotesque-Regular.woff") format("woff");
+  font-weight: 400; /* Regular weight */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BrandonGrotesqueBold";
+  src: url("/fonts/BrandonGrotesque-Bold.woff") format("woff");
+  font-weight: 700; /* Bold weight */
+  font-style: normal;
+}
