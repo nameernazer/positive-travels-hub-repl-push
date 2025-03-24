@@ -39,7 +39,7 @@ export default function VisionSection() {
           <h2 className="mt-10 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight">
             Creating Memories That Last a Lifetime
           </h2>
-          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon">
+          <p className="mt-6 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon tracking-wide">
             At Positive Travel and Holidays, we believe in transforming your travel dreams into reality
             through exceptional service and attention to detail.
           </p>
@@ -56,8 +56,8 @@ export default function VisionSection() {
               className="glass-panel p-8 rounded-2xl text-center slide-up"
             >
               <feature.icon className="w-12 h-12 text-primary mx-auto" />
-              <h3 className="mt-4 text-xl font-semibold">{feature.title}</h3>
-              <p className="mt-2 text-muted-foreground">{feature.description}</p>
+              <h3 className="mt-4 text-xl font-brandonBold uppercase">{feature.title}</h3>
+              <p className="mt-2 font-brandon  text-lg text-muted-foreground tracking-wide">{feature.description}</p>
             </motion.div>
           ))}
         </div>

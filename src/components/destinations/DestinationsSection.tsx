@@ -30,7 +30,7 @@ export default function DestinationsSection() {
           <h2 className="mt-10 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight">
             Explore the World with Us
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon">
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon tracking-wide">
             Discover incredible destinations and create unforgettable memories
           </p>
         </motion.div>

@@ -6,35 +6,41 @@ import { Plane, Hotel, FileText, Compass } from "lucide-react";
 import { useEffect } from 'react';
 
 const destinationData = {
-  asia: {
-    title: "Discover Asia",
-    description: "Experience the perfect blend of ancient traditions and modern wonders",
-    bgImage: "https://images.unsplash.com/photo-1480796927426-f609979314bd",
-    content: "From the bustling streets of Tokyo to the serene temples of Thailand, Asia offers an incredible diversity of experiences. Explore ancient traditions, savor exotic cuisines, and immerse yourself in rich cultural heritage."
+  lakshadweep: {
+    title: "Unwind in Lakshadweep",
+    description: "Escape to pristine shores and turquoise waters",
+    bgImage: "https://images.unsplash.com/photo-1572025310208-2fd6b91764c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFrc2hhZHdlZXB8ZW58MHwwfDB8fHww",
+    content: "Discover the untouched beauty of Lakshadweep’s serene islands. Dive into vibrant coral reefs, relax on sun-kissed beaches, and experience a tranquil getaway like no other. A paradise for nature lovers and adventure seekers alike."
   },
-  europe: {
-    title: "Explore Europe",
-    description: "Journey through centuries of history and culture",
+  kashmir: {
+    title: "Explore Kashmir's Beauty",
+    description: "Paradise on Earth awaits you",
     bgImage: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed",
-    content: "Discover the charm of historic cities, indulge in world-class cuisine, and experience the sophistication of European culture. From the romantic streets of Paris to the ancient ruins of Rome."
+    content: "From the breathtaking valleys of Gulmarg to the peaceful waters of Dal Lake, Kashmir offers an enchanting escape. Revel in snowy mountains, vibrant tulip gardens, and a culture rich with warmth and tradition. Perfect for every soul seeking serenity."
+  },
+  thailand: {
+    title: "Discover Thailand's Charm",
+    description: "A land of culture and adventure",
+    bgImage: "https://images.unsplash.com/photo-1572529593091-6c05c37cacc7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHRoYWlsYW5kfGVufDB8MHwwfHx8MA%3D%3D",
+    content: "Journey through the heart of Thailand, where golden temples, bustling markets, and tropical beaches await. Savor the world-famous street food, immerse yourself in local festivals, and embrace a vibrant blend of tradition and modernity."
+  },
+  singapore: {
+    title: "Experience Vibrant Singapore",
+    description: "Innovation meets culture in one destination",
+    bgImage: "https://images.unsplash.com/photo-1580438816338-969175d4b367?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzh8fHNpbmdhcG9yZXxlbnwwfDB8MHx8fDA%3D",
+    content: "Explore Singapore, where futuristic skylines blend seamlessly with lush green spaces. Visit iconic attractions like Marina Bay Sands, Gardens by the Bay, and Chinatown. A city that redefines the perfect balance of modern living and cultural heritage."
   },
   "middle-east": {
-    title: "Experience the Middle East",
+  title: "Experience the Middle East",
     description: "Where tradition meets luxury",
     bgImage: "https://images.unsplash.com/photo-1466442929976-97f336a657be",
     content: "Immerse yourself in the magical world of Arabian nights, explore ancient civilizations, and experience world-class luxury. From the modern marvels of Dubai to the historic treasures of Petra."
   },
-  "north-america": {
-    title: "Discover North America",
-    description: "From coast to coast adventures",
-    bgImage: "https://images.unsplash.com/photo-1485738422979-f5c462d49f74",
-    content: "Experience the diversity of landscapes, from bustling cities to breathtaking national parks. Explore iconic landmarks, vibrant culture, and natural wonders across the United States and Canada."
-  },
-  "south-america": {
-    title: "Adventure in South America",
-    description: "Explore natural wonders and ancient civilizations",
-    bgImage: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325",
-    content: "Journey through the Amazon rainforest, witness the majesty of Machu Picchu, and experience the vibrant culture of South American cities. An adventure of a lifetime awaits."
+  india: {
+  title: "Journey Through Timeless India",
+    description: "Country of culture and diversity",
+    bgImage: "https://images.unsplash.com/photo-1519998994457-43c1f2c8460b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fGluZGlhfGVufDB8MHwwfHx8MA%3D%3D",
+    content: "From the majestic Himalayas to the bustling streets of Mumbai, India captivates with its diversity. Explore ancient forts, savor rich cuisines, and immerse yourself in traditions that date back centuries. A destination that truly has it all"    
   }
 };
 
@@ -88,12 +94,12 @@ const DestinationPage = () => {
     >
       <div className="container-custom py-16">
         <div className="max-w-3xl mx-auto mb-16">
-          <p className="text-lg text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed font-brandon tracking-wide">
             {destination.content}
           </p>
         </div>
 
-        <h2 className="text-3xl font-bold text-center mb-12">Our Services for {destination.title}</h2>
+        <h2 className="text-3xl font-brandonBold uppercase text-center mb-12">Our Services for {destination.title}</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {services.map((service, index) => (
@@ -110,8 +116,8 @@ const DestinationPage = () => {
                 className="p-6 border rounded-lg hover:bg-secondary/50 transition-colors h-full"
               >
                 <service.icon className="w-12 h-12 text-primary mb-4" />
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-muted-foreground mb-4">{service.description}</p>
+                <h3 className="text-xl font-semibold font-brandon uppercase tracking-wide mb-2">{service.title}</h3>
+                <p className="text-muted-foreground mb-4 font-brandon text-lg tracking-wide">{service.description}</p>
                 <span className="text-primary group-hover:text-primary/80 transition-colors inline-flex items-center">
                   Learn More
                   <span className="inline-block ml-1 relative top-[1px]">→</span>

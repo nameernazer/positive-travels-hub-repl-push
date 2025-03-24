@@ -45,8 +45,8 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
         {/* Centered title */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container-custom text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">{description}</p>
+            <h1 className="text-5xl md:text-5xl font-alternate uppercase mb-4 mt-20">{title}</h1>
+            <p className="mt-14 text-2xl text-white/90 font-semibold font-brandon">{description}</p>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
           whileHover={{ scale: 1.02 }}
           className="bg-primary/10 rounded-2xl p-8 text-center"
         >
-          <h3 className="text-2xl font-bold mb-4">Ready to Start Your Journey?</h3>
+          <h3 className="text-2xl uppercase font-semibold mb-4">Ready to Start Your Journey?</h3>
           <p className="text-muted-foreground mb-6">
             Contact us now and let us help you plan your perfect trip.
           </p>

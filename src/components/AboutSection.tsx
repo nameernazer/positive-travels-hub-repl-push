@@ -68,7 +68,7 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="w-full md:w-3/4"
           >
-            <h3 className="text-2xl font-semibold mb-4">Welcome to Positive Travel and Holidays</h3>
+            <h3 className="text-2xl font-semibold font-brandon uppercase mb-4">Welcome to Positive Travel and Holidays</h3>
             <p className="text-muted-foreground mb-4 text-base font-brandon font-medium text-lg">
               Under the visionary leadership of Mr. Nazer EP, Positive Travel and Holidays has emerged as a trusted name in the travel industry. With years of experience and deep industry knowledge, Mr. Nazer EP has built a company dedicated to creating exceptional travel experiences.
             </p>
@@ -79,14 +79,14 @@ export default function AboutSection() {
             {/* Mission and Support sections - Full width on mobile, 2-column on desktop */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="bg-secondary/30 p-5 rounded-lg">
-                <h4 className="text-xl font-semibold mb-2">Our Mission</h4>
+                <h4 className="text-xl font-medium uppercase  tracking-wide mb-2 ">Our Mission</h4>
                 <p className="text-muted-foreground text-base font-brandon text-lg">
                   To provide extraordinary travel experiences while ensuring customer satisfaction through our 24/7 dedicated support and personalized service.
                 </p>
               </div>
               
               <div className="bg-secondary/30 p-5 rounded-lg">
-                <h4 className="text-xl font-semibold mb-2">24/7 Support</h4>
+                <h4 className="text-xl font-medium uppercase tracking-wide mb-2">24/7 Support</h4>
                 <p className="text-muted-foreground text-base font-brandon text-lg">
                   Our team is available round the clock to assist you with any queries or support you need during your journey.
                 </p>

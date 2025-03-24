@@ -41,7 +41,7 @@ export default function ContactSection() {
           <h2 className="mt-10 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight">
             Let's Plan Your Next Adventure
           </h2>
-          <p className="mt-5 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon text-xl">
+          <p className="mt-5 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon text-xl tracking-wide">
             Ready to start your journey? Reach out to us through any of these channels
             and we'll be happy to help you plan your perfect trip.
           </p>
@@ -59,8 +59,8 @@ export default function ContactSection() {
               className="group p-6 rounded-2xl border bg-card hover:bg-secondary/50 transition-colors"
             >
               <item.icon className="w-10 h-10 text-primary mb-4" />
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="text-muted-foreground mt-2">{item.content}</p>
+              <h3 className="text-lg font-brandonBold uppercase">{item.title}</h3>
+              <p className="font-brandon text-lg tracking-wider text-muted-foreground mt-2">{item.content}</p>
               <div className="mt-4 flex items-center justify-start">
                 <span className="text-primary font-medium group-hover:text-primary/80 transition-colors inline-flex items-center">
                   {item.action}

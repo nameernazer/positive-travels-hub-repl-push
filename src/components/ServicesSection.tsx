@@ -44,7 +44,7 @@ export default function ServicesSection() {
 
           <span className="text-black font-bold font-brandonBold uppercase tracking-wider text-5xl">THE LUXURY TRAVEL EXPERTS</span>
 
-          <p className="font-brandon mt-10 mb-20 text-muted-foreground max-w-2xl mx-auto text-lg">
+          <p className="font-brandon mt-10 mb-20 text-muted-foreground max-w-2xl mx-auto text-lg tracking-wide">
             The world is vast, full of wonders. But information engulfs us. See this, do that, don’t miss this. It seems the more choice there is, the more overwhelmed we feel. What’s more, you’re never asked how you want to feel. In fact, you’re rarely asked anything. That’s not us. We are people. People who value human connection and thrive on connecting you to our vast world. A company of people renowned for planning remarkable and luxurious travel experiences.
 
             
@@ -64,7 +64,7 @@ export default function ServicesSection() {
           <h2 className="mt-10 text-4xl md:text-5xl font-brandonBold uppercase tracking-tight font-bold">
             Comprehensive Travel Solutions
           </h2>
-          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon">
+          <p className="mt-4 text-muted-foreground max-w-2xl mx-auto text-lg font-brandon tracking-wide">
             We offer a complete range of travel services to make your journey seamless and memorable.
           </p>
         </motion.div>
@@ -84,8 +84,8 @@ export default function ServicesSection() {
                 className="group p-8 rounded-2xl border bg-card hover:bg-secondary/50 transition-colors"
               >
                 <service.icon className="w-12 h-12 text-primary" />
-                <h3 className="mt-4 text-xl font-semibold">{service.title}</h3>
-                <p className="mt-2 text-muted-foreground">{service.description}</p>
+                <h3 className="mt-4 text-xl font-semibold font-brandon uppercase tracking-wider">{service.title}</h3>
+                <p className="font-brandon mt-2 text-muted-foreground text-lg tracking-wide">{service.description}</p>
                 <div className="mt-4 flex items-center justify-start">
                   <span className="text-primary font-medium group-hover:text-primary/80 transition-colors inline-flex items-center">
                     Learn More
