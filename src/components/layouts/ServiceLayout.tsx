@@ -45,8 +45,8 @@ const ServiceLayout = ({ children, title, description, bgImage }: ServiceLayoutP
         {/* Centered title */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container-custom text-center text-white">
-            <h1 className="text-5xl md:text-5xl font-alternate uppercase mb-4 mt-20">{title}</h1>
-            <p className="mt-14 text-2xl text-white/90 font-semibold font-brandon">{description}</p>
+            <h1 className="text-6xl md:text-5xl font-alternate uppercase mb-4 mt-20 tracking-wide">{title}</h1>
+            <p className="mt-14 text-2xl text-white/90 font-semibold font-brandon tracking-tight">{description}</p>
           </div>
         </div>
       </div>
