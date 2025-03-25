@@ -45,22 +45,22 @@ const HotelReservationsPage = () => {
               className="text-center p-6"
             >
               <feature.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <h3 className="text-xl font-brandonBold uppercase mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground font-brandon">{feature.description}</p>
             </motion.div>
           ))}
         </div>
 
         <div className="mt-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Why Book With Us?</h2>
+          <h2 className="text-4xl font-alternate text-center mb-8 tracking-wide">Why Book With Us?</h2>
           <div className="space-y-6">
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground font-brandonBold uppercase">
               We partner with the finest hotels worldwide to offer you exceptional accommodations at competitive prices. Our extensive network ensures you'll find the perfect place to stay.
             </p>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground font-brandon">
               Our hotel booking services include:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground font-brandon">
               <li>Access to luxury and boutique hotels</li>
               <li>Special corporate rates</li>
               <li>Group booking discounts</li>

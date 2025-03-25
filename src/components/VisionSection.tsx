@@ -1,10 +1,10 @@
 
 import { motion } from 'framer-motion';
-import { Heart, Clock, Award } from 'lucide-react';
+import { Handshake, Clock, Award } from 'lucide-react';
 
 const features = [
   {
-    icon: Heart,
+    icon: Handshake,
     title: "Personalized Service",
     description: "We craft unique travel experiences tailored to your preferences and dreams."
   },

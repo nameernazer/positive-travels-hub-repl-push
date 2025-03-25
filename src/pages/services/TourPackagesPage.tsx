@@ -45,22 +45,22 @@ const TourPackagesPage = () => {
               className="text-center p-6"
             >
               <feature.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <h3 className="text-xl font-brandonBold uppercase mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground font-brandon">{feature.description}</p>
             </motion.div>
           ))}
         </div>
 
         <div className="mt-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Explore Our Tour Packages</h2>
+          <h2 className="text-4xl font-alternate text-center mb-8 tracking-wide">Explore Our Tour Packages</h2>
           <div className="space-y-6">
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground font-brandonBold uppercase">
               Experience the world's most fascinating destinations with our carefully crafted tour packages. Whether you're seeking adventure, culture, or relaxation, we have the perfect itinerary for you.
             </p>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground font-brandon">
               Our tour packages include:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground font-brandon">
               <li>Expertly planned itineraries</li>
               <li>Professional tour guides</li>
               <li>Quality accommodations</li>

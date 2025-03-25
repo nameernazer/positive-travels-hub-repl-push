@@ -25,8 +25,8 @@ const ContactPage = () => {
         {/* Centered title with support text */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container-custom text-center text-white">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Reach out to us!</h1>
-            <p className="text-xl text-white/90 max-w-2xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-alternate text-5xl tracking-wide mb-4 mt-20">Reach out to us!</h1>
+            <p className="mt-14 text-xl text-white/90 max-w-2xl mx-auto font-semibold font-brandon tracking-wide">
               Our dedicated team provides 24/7 support to ensure your journey is seamless from start to finish.
             </p>
           </div>
@@ -43,9 +43,9 @@ const ContactPage = () => {
             className="text-center p-6 hover:bg-secondary/10 rounded-lg transition-colors"
           >
             <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Call Us</h3>
-            <p className="text-muted-foreground">+91 94974 58282</p>
-            <p className="text-sm text-muted-foreground mt-2">Available 24/7</p>
+            <h3 className="text-xl font-brandonBold uppercase mb-2">Call Us</h3>
+            <p className="text-muted-foreground font-brandon">+91 94974 58282</p>
+            <p className="text-sm text-muted-foreground mt-2 font-brandon ">Available 24/7</p>
           </motion.a>
 
           <motion.a
@@ -56,9 +56,9 @@ const ContactPage = () => {
             className="text-center p-6 hover:bg-secondary/10 rounded-lg transition-colors"
           >
             <Mail className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-            <p className="text-muted-foreground">positivetravelandholidays@gmail.com</p>
-            <p className="text-sm text-muted-foreground mt-2">Quick response guaranteed</p>
+            <h3 className="text-xl font-brandonBold uppercase mb-2">Email Us</h3>
+            <p className="text-muted-foreground font-brandon">positivetravelandholidays@gmail.com</p>
+            <p className="text-sm text-muted-foreground mt-2 font-brandon">Quick response guaranteed</p>
           </motion.a>
 
           <motion.a
@@ -71,9 +71,9 @@ const ContactPage = () => {
             className="text-center p-6 hover:bg-secondary/10 rounded-lg transition-colors"
           >
             <MessageCircle className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
-            <p className="text-muted-foreground">+91 75939 46666</p>
-            <p className="text-sm text-muted-foreground mt-2">Instant messaging support</p>
+            <h3 className="text-xl font-brandonBold uppercase mb-2">WhatsApp</h3>
+            <p className="text-muted-foreground font-brandon">+91 75939 46666</p>
+            <p className="text-sm text-muted-foreground mt-2 font-brandon">Instant messaging support</p>
           </motion.a>
 
           <motion.a
@@ -86,8 +86,8 @@ const ContactPage = () => {
             className="text-center p-6 hover:bg-secondary/10 rounded-lg transition-colors"
           >
             <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Visit Us</h3>
-            <p className="text-muted-foreground">Malappuram, Kerala, India</p>
+            <h3 className="text-xl font-brandonBold uppercase mb-2">Visit Us</h3>
+            <p className="text-muted-foreground font-brandon">Thirunnavaya, Malappuram, Kerala, India</p>
           </motion.a>
 
           <motion.a
@@ -100,8 +100,8 @@ const ContactPage = () => {
             className="text-center p-6 hover:bg-secondary/10 rounded-lg transition-colors"
           >
             <Facebook className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Facebook</h3>
-            <p className="text-muted-foreground">Positive Travel and Holidays</p>
+            <h3 className="text-xl font-brandonBold uppercase mb-2">Facebook</h3>
+            <p className="text-muted-foreground font-brandon">Positive Travel and Holidays</p>
           </motion.a>
 
           <motion.a
@@ -114,8 +114,8 @@ const ContactPage = () => {
             className="text-center p-6 hover:bg-secondary/10 rounded-lg transition-colors"
           >
             <Instagram className="w-12 h-12 text-primary mx-auto mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Instagram</h3>
-            <p className="text-muted-foreground">positivetravelandholidays</p>
+            <h3 className="text-xl font-brandonBold uppercase mb-2">Instagram</h3>
+            <p className="text-muted-foreground font-brandon">positivetravelandholidays</p>
           </motion.a>
         </div>
       </div>

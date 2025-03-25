@@ -45,22 +45,22 @@ const VisaServicesPage = () => {
               className="text-center p-6"
             >
               <feature.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <h3 className="text-xl font-brandonBold uppercase mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground font-brandon">{feature.description}</p>
             </motion.div>
           ))}
         </div>
 
         <div className="mt-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Comprehensive Visa Assistance</h2>
+          <h2 className="text-4xl font-alternate text-center mb-8 tracking-wide">Comprehensive Visa Assistance</h2>
           <div className="space-y-6">
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground font-brandonBold uppercase">
               Our experienced team provides end-to-end visa assistance for all major destinations. We handle the complexities of visa applications, ensuring a smooth process for our clients.
             </p>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground font-brandon">
               Our visa services include:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground font-brandon">
               <li>Documentation guidance and verification</li>
               <li>Application form filling assistance</li>
               <li>Interview preparation</li>

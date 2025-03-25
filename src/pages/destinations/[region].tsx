@@ -94,7 +94,7 @@ const DestinationPage = () => {
     >
       <div className="container-custom py-16">
         <div className="max-w-3xl mx-auto mb-16">
-          <p className="text-lg text-center text-muted-foreground leading-relaxed font-brandon tracking-wide">
+          <p className="text-lg text-muted-foreground leading-relaxed font-brandon tracking-wide">
             {destination.content}
           </p>
         </div>

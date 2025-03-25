@@ -50,22 +50,22 @@ const FlightBookingsPage = () => {
               className="text-center p-6"
             >
               <feature.icon className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground">{feature.description}</p>
+              <h3 className="text-xl font-brandonBold uppercase mb-2">{feature.title}</h3>
+              <p className="text-muted-foreground font-brandon">{feature.description}</p>
             </motion.div>
           ))}
         </div>
 
         <div className="mt-16 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Why Choose Our Flight Booking Service?</h2>
+          <h2 className="text-4xl font-alternate text-4xl tracking-wide text-center mb-8">Why Choose Our Flight Booking Service?</h2>
           <div className="space-y-6">
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground font-brandonBold uppercase">
               At Positive Travel & Holidays, we understand that finding the right flight is crucial to your travel experience. Our dedicated team works tirelessly to ensure you get the best options at competitive prices.
             </p>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-lg text-muted-foreground font-brandon">
               We offer comprehensive flight booking services including:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
+            <ul className="list-disc pl-6 space-y-2 text-muted-foreground font-brandon">
               <li>Access to all major airlines worldwide</li>
               <li>Special deals and discounted fares</li>
               <li>Multi-city and round-trip bookings</li>
