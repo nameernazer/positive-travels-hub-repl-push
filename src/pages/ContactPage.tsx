@@ -26,7 +26,7 @@ const ContactPage = () => {
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="container-custom text-center text-white">
             <h1 className="text-4xl md:text-5xl font-alternate text-5xl tracking-wide mb-4 mt-20">Reach out to us!</h1>
-            <p className="mt-14 text-xl text-white/90 max-w-2xl mx-auto font-semibold font-brandon tracking-wide">
+            <p className="mt-14 text-xl text-white/90 max-w-2xl mx-auto font-semibol font-brandon tracking-wide">
               Our dedicated team provides 24/7 support to ensure your journey is seamless from start to finish.
             </p>
           </div>
